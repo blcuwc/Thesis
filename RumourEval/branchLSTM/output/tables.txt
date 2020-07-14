@@ -1,0 +1,56 @@
+trials.txt is not available
+
+
+--- Table 4 ---
+
+Number of tweets per depth and performance at each of the depths
+
+Depth       # tweets    # Support   # Deny      # Query     # Comment   Accuracy    MacroF      Support     Deny        Query       Comment     
+0           28          26          2           0           0           0.929       0.481       0.963       0.000       0.000       0.000       
+1           704         61          60          81          502         0.696       0.409       0.161       0.094       0.558       0.822       
+2           128         3           6           7           112         0.867       0.288       0.000       0.000       0.222       0.928       
+3           60          2           1           5           52          0.867       0.232       0.000       0.000       0.000       0.929       
+4           41          0           0           3           38          0.927       0.481       0.000       0.000       0.000       0.962       
+5           27          1           0           1           25          0.926       0.321       0.000       0.000       0.000       0.962       
+6+          61          1           2           9           49          0.803       0.223       0.000       0.000       0.000       0.891       
+
+
+--- Table 5 ---
+
+Confusion matrix
+
+Lab \ Pred  Comment     Deny        Query       Support     
+Comment     714         12          10          42          
+Deny        59          4           2           6           
+Query       55          7           37          7           
+Support     54          3           1           36          
+
+
+--- Table 3 ---
+
+Part 1: Results on testing set
+
+Accuracy = 0.7540514775977121
+
+Macro-average:
+Precision   0.525       
+Recall      0.427       
+F-score     0.452       
+Support     --          
+
+Per-class:
+            Comment     Deny        Query       Support     
+Precision   0.810       0.154       0.740       0.396       
+Recall      0.918       0.056       0.349       0.383       
+F-score     0.860       0.082       0.474       0.389       
+Support     778         71          106         94          
+
+Part 2: Results on development set
+
+As presented in the paper:
+
+            Accuracy    Macro-F     Comment     Deny        Query       Support     
+Testing     0.754       0.452       0.860       0.082       0.474       0.389       
+
+Could not find trials.txt; unable to generate results for development set in Table 3.
+
