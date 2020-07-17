@@ -41,7 +41,7 @@ def load_true_labels(dataset_name):
     traindev_path = os.path.join("../../branchLSTM/downloaded_data", "semeval2017-task8-dataset", "traindev")
     data_files = {"dev": os.path.join(traindev_path, "rumoureval-subtaskA-dev.json"),
                   "train": os.path.join(traindev_path, "rumoureval-subtaskA-train.json"),
-                  "test": "subtaska.json"}
+                  "test": "../../branchLSTM/subtaska.json"}
 
     # Load the dictionary containing the tweets and labels from the .json file
     with open(data_files[dataset_name]) as f:
@@ -62,7 +62,7 @@ def load_dataset():
     test_tweets = test.keys()
 
     # Load folds and conversations
-    path_to_folds = os.path.join('../branchLSTM/downloaded_data', 'semeval2017-task8-dataset/rumoureval-data')
+    path_to_folds = os.path.join('../../branchLSTM/downloaded_data', 'semeval2017-task8-dataset/rumoureval-data')
     folds = sorted(os.listdir(path_to_folds))
     newfolds = [i for i in folds if i[0] != '.']
     folds = newfolds
@@ -141,7 +141,7 @@ def load_dataset():
             allconv.append(conversation)
 
     # Load testing data
-    path_to_test = os.path.join('../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
+    path_to_test = os.path.join('../../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
     test_folders = sorted(os.listdir(path_to_test))
     newfolds = [i for i in test_folders if i[0] != '.']
     test_folders = newfolds
@@ -211,6 +211,45 @@ def load_dataset():
 
     return allconv
 
+def tree2branches(root):
+    node = root
+    parent_tracker = []
+    parent_tracker.append(root)
+    branch = []
+    branches = []
+    i = 0
+    while True:
+        node_name = list(node.keys())[i]
+        #print node_name
+        branch.append(node_name)
+        # get children of the node
+        first_child = list(node.values())[i]
+        # actually all chldren, all tree left under this node
+        if first_child != []:  # if node has children
+            node = first_child      # walk down
+            parent_tracker.append(node)
+            siblings = list(first_child.keys())
+            i = 0  # index of a current node
+        else:
+            branches.append(deepcopy(branch))
+            i = siblings.index(node_name)  # index of a current node
+            # if the node doesn't have next siblings
+            while i+1 >= len(siblings):
+                if node is parent_tracker[0]:  # if it is a root node
+                    return branches
+                del parent_tracker[-1]
+                del branch[-1]
+                node = parent_tracker[-1]      # walk up ... one step
+                node_name = branch[-1]
+                siblings = list(node.keys())
+                i = siblings.index(node_name)
+            i = i+1    # ... walk right
+#            node =  parent_tracker[-1].values()[i]
+            del branch[-1]
+#            branch.append(node.keys()[0])
+#%%
+# process tweet into features
+
 def split_dataset(allconv):
     train_dev_splits = []
     train_dev_split = {}
@@ -275,20 +314,36 @@ def Extract_dataset(train_dev_split):
         #print (dataset.keys())
     return dataset
 
-def save_predictions(id_list, predictions):
-    out_path = './output'
+def save_predictions(id_list, predictions, fold_num):
+    out_path = './output_new'
     if not os.path.exists(out_path):
         os.makedirs(out_path)
     
     result_dictionary = dict(zip(id_list, predictions))
 
-    with open(os.path.join(out_path,'predictions.txt'), 'w+') as outfile:
+    with open(os.path.join(out_path,'prediction%s.txt' % str(fold_num)), 'w+') as outfile:
         json.dump(result_dictionary, outfile)
-    print ("saved result and predictions")
-    #stop = timeit.default_timer()
-    #print ("Time: ",stop - start)
+    print ("saved result and prediction%s!" % str(fold_num))
 
-def Classify(dataset):
+def save_test_labels(train_dev_splits):
+    test_id_label = {}
+    test_label_path = 'true_test_labels'
+    if not os.path.exists(test_label_path):
+        os.makedirs(test_label_path)
+    for fold_num in range(len(train_dev_splits)):
+        print ("save %s test labels" % str(fold_num))
+        test_conv = train_dev_splits[fold_num]['test']
+        for conv in test_conv:
+            src = conv['source']
+            replies = conv["replies"]
+            test_id_label[src['id_str']] = src['label']
+            for reply in replies:
+                test_id_label[reply['id_str']] = reply['label']
+        with open(os.path.join(test_label_path,'fold%s.txt' % str(fold_num)), 'w+') as outfile:
+            json.dump(test_id_label, outfile)
+        test_id_label = {}
+
+def Classify(dataset, fold_num):
     categories = ['support', 'query', 'deny', 'comment']
     #print ("categories:", categories)
     categories2num = {'support':0, 'query':1, 'deny':2, 'comment':3}
@@ -322,7 +377,8 @@ def Classify(dataset):
     for tweet in test_texts:
         p_test.append(p.predict(tweet))
 
-    save_predictions(dataset['test'][2], p_test)
+    #save predicted test dataset labels tweet_id:predicted_label
+    save_predictions(dataset['test'][2], p_test, fold_num)
 
     print (classification_report(test_labels, p_test, list(np.unique(test_labels))))
 
@@ -333,7 +389,7 @@ if __name__ == "__main__":
     # 5-fold cross validation
     train_dev_splits = split_dataset(allconv)
 
-    #save true test dataset tweet_id:label
+    #save true test dataset labels tweet_id:true_label
     save_test_labels(train_dev_splits)
 
     for i in range(len(train_dev_splits)):
@@ -342,4 +398,4 @@ if __name__ == "__main__":
         print ("*********************************")
         print ("********** Fold %s **************" % str(i))
         print ("*********************************")
-        Classify(dataset)
+        Classify(dataset, i)
