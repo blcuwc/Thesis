@@ -95,10 +95,10 @@ def load_dataset():
                         src['label'] = test[scrcid]
                     else:
                         src['set'] = 'Null'
-                        print "Tweet was not found! ID: ", foldr
+                        print ("Tweet was not found! ID: ", foldr)
             conversation['source'] = src
             if src['text'] is None:
-                print "Tweet has no text", src['id']
+                print ("Tweet has no text", src['id'])
             tweets = []
             path_repl = path_to_tweets+'/'+foldr+'/replies'
             files_t = sorted(os.listdir(path_repl))
@@ -118,10 +118,10 @@ def load_dataset():
                             tw['label'] = test[replyid]
                         else:
                             tw['set'] = 'Null'
-                            print "Tweet was not found! ID: ", foldr
+                            print ("Tweet was not found! ID: ", foldr)
                         tweets.append(tw)
                         if tw['text'] is None:
-                            print "Tweet has no text", tw['id']
+                            print ("Tweet has no text", tw['id'])
             conversation['replies'] = tweets
             path_struct = path_to_tweets+'/'+foldr+'/structure.json'
             with open(path_struct) as f:
@@ -164,10 +164,10 @@ def load_dataset():
                     src['label'] = test[scrcid]
                 else:
                     src['set'] = 'Null'
-                    print "Tweet was not found! ID: ", foldr
+                    print ("Tweet was not found! ID: ", foldr)
         conversation['source'] = src
         if src['text'] is None:
-            print "Tweet has no text", src['id']
+            print ("Tweet has no text", src['id'])
         tweets = []
         path_repl = path_to_test+'/'+tfldr+'/replies'
         files_t = sorted(os.listdir(path_repl))
@@ -187,9 +187,9 @@ def load_dataset():
                         tw['label'] = test[replyid]
                     else:
                         tw['set'] = 'Null'
-                        print "Tweet was not found! ID: ", foldr
+                        print ("Tweet was not found! ID: ", foldr)
                     if tw['text'] is None:
-                        print "Tweet has no text", tw['id']
+                        print ("Tweet has no text", tw['id'])
             tweets.append(tw)
         conversation['replies'] = tweets
         path_struct = path_to_test+'/'+tfldr+'/structure.json'
