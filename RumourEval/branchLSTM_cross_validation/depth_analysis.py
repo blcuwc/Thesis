@@ -1,10 +1,11 @@
 import os
+import ipdb
 import json
 import numpy
 import pickle
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 
-from preprocessing import load_dataset, load_true_labels
+from preprocessing import load_dataset, load_true_labels, split_dataset
 
 import matplotlib
 matplotlib.use("Agg")
@@ -22,17 +23,17 @@ def convertlabeltostr(label):
     else:
         print(label)  
   
-def load_test_depth_pred_true():
+def load_test_depth_pred_true(train_dev_splits, fold_num):
 
     # Read the predictions of the model
-    submission_file = os.path.join("output", "predictions.txt")
+    submission_file = os.path.join("output_new", "prediction" + str(fold_num) + ".txt")
     submission = json.load(open(submission_file, 'r'))
 
     # And then the corresponding test data
-    test_truevals = load_true_labels("test")
+    test_truevals = json.load(open('true_test_labels/fold%s.txt' % str(fold_num), 'r'))
 
     # Load the full dataset and get the list of test tweets and their properties
-    train_dev_split = load_dataset()
+    train_dev_split = train_dev_splits[fold_num]
     alltestinfo = train_dev_split['test']
 
     alltestbranches = []
@@ -348,31 +349,49 @@ def print_table_five(true, pred):
 
 if __name__ == "__main__":
 
-    # First load the full set of tweets.
+    # First load the full set of conversations.
     # Then calculate the depth and extract the true and predicted labels for the test set specifically.
-    tweet_depth, test_predicted_labels, test_labels = load_test_depth_pred_true()
+    allconv = load_dataset()
+    train_dev_splits = split_dataset(allconv)
+
+    tweet_depth_list = []
+    test_predicted_labels_list = []
+    test_labels_list = []
+
+    for fold_num in range(5):
+        tweet_depth, test_predicted_labels, test_labels = load_test_depth_pred_true(train_dev_splits, fold_num)
+        tweet_depth_list.append(tweet_depth)
+        test_predicted_labels_list.append(test_predicted_labels)
+        test_labels_list.append(test_labels)
 
     # If it is present, load data from trials file and format in the same way as the submitted files
     # (return None if the trials file is not available)
-    dev_labels = load_true_labels("dev")
+    #dev_labels = load_true_labels("dev")
+    dev_labels = None
     best_trial, best_loss, dev_predicted_labels = load_trials_data()
-
-    # Analyse the results separately at each depth
-    level_for_each_depth, results_for_each_depth = \
-        calculate_results_at_each_depth(tweet_depth, test_predicted_labels, test_labels)
-
-    # Get lists of the true and predicted classes for the test and, if possible, development sets
-    true_labels_test, predicted_labels_test = get_true_and_predicted_classes(test_labels, test_predicted_labels)
-    true_labels_dev, predicted_labels_dev = get_true_and_predicted_classes(dev_labels, dev_predicted_labels)
 
     # Define some useful labels for table rows/columns
     class_labels = ("Support", "Deny", "Query", "Comment")
 
-    # Print the tables
-    print_table_four(level_for_each_depth, results_for_each_depth)
-    print_table_five(true_labels_test, predicted_labels_test)
-    print_table_three(true_labels_test, predicted_labels_test,
-                      true_labels_dev, predicted_labels_dev, best_trial, best_loss)
+    # Analyse the results separately at each depth
+    for i in range(5):
+        level_for_each_depth, results_for_each_depth = \
+            calculate_results_at_each_depth(tweet_depth_list[i], test_predicted_labels_list[i], test_labels_list[i])
+
+        # Get lists of the true and predicted classes for the test and, if possible, development sets
+        #ipdb.set_trace()
+        true_labels_test, predicted_labels_test = get_true_and_predicted_classes(test_labels_list[i], test_predicted_labels_list[i])
+        true_labels_dev, predicted_labels_dev = get_true_and_predicted_classes(dev_labels, dev_predicted_labels)
+
+
+        # Print the tables
+        print "***************************"
+        print "********  Fold %s   ********" % str(i)
+        print "***************************"
+        print_table_four(level_for_each_depth, results_for_each_depth)
+        print_table_five(true_labels_test, predicted_labels_test)
+        print_table_three(true_labels_test, predicted_labels_test,
+                          true_labels_dev, predicted_labels_dev, best_trial, best_loss)
 
     # If the trials file is available, output more details of the best hyperparameter combinations and prepare a figure
     # showing the loss during the hyperparameter choice process

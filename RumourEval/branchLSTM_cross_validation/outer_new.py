@@ -135,6 +135,7 @@ def eval(params):
     results = []
     result_dictionaries = []
     for fold_num in range(5):
+        print "predict fold num: ", fold_num
         result = eval_train_model(params, fold_num)
         # Convert result to scorer.py format
         keys = pickle.loads(result['attachments']['ID'])
@@ -149,6 +150,7 @@ def eval(params):
         os.makedirs(out_path)
     
     for i in range(5):
+        print "save fold num: ", i
         f = open(os.path.join(out_path,'result%s.txt' % str(i)), "w+")
         pickle.dump(results[i], f)
         f.close()

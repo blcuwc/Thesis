@@ -32,7 +32,7 @@ def load_true_labels(dataset_name):
 
     # Training and development datasets should be stored in the downloaded_data folder (see installation instructions).
     # The test data is kept in the repo for now.
-    traindev_path = os.path.join("downloaded_data", "semeval2017-task8-dataset", "traindev")
+    traindev_path = os.path.join("../branchLSTM/downloaded_data", "semeval2017-task8-dataset", "traindev")
     data_files = {"dev": os.path.join(traindev_path, "rumoureval-subtaskA-dev.json"),
                   "train": os.path.join(traindev_path, "rumoureval-subtaskA-train.json"),
                   "test": "subtaska.json"}
@@ -57,18 +57,13 @@ def load_dataset():
     test_tweets = test.keys()
 
     # Load folds and conversations
-    path_to_folds = os.path.join('downloaded_data', 'semeval2017-task8-dataset/rumoureval-data')
+    path_to_folds = os.path.join('../branchLSTM/downloaded_data', 'semeval2017-task8-dataset/rumoureval-data')
     folds = sorted(os.listdir(path_to_folds))
     newfolds = [i for i in folds if i[0] != '.']
     folds = newfolds
-    #cvfolds = {}
     allconv = []
     weird_conv = []
     weird_struct = []
-    train_dev_split = {}
-    train_dev_split['dev'] = []
-    train_dev_split['train'] = []
-    train_dev_split['test'] = []
     for nfold, fold in enumerate(folds):
         path_to_tweets = os.path.join(path_to_folds, fold)
         tweet_data = sorted(os.listdir(path_to_tweets))
@@ -87,27 +82,12 @@ def load_dataset():
                     src = json.loads(line)
                     src['used'] = 0
                     scrcid = src['id_str']
-                    # add set and label to tweet info
-                    # first find the tweet in one of the sets
-                    # foldr - src tweet id
                     if scrcid in dev_tweets:
-                        src['set'] = 'dev'
                         src['label'] = dev[scrcid]
-                        #flag shows source tweet is in dev dataset
-                        flag = 'dev'
-    #                    train_dev_tweets['dev'].append(src)
                     elif scrcid in train_tweets:
-                        src['set'] = 'train'
                         src['label'] = train[scrcid]
-                        #flag shows source tweet is in train dataset
-                        flag = 'train'
-    #                    train_dev_tweets['train'].append(src)
                     elif scrcid in test_tweets:
-                        src['set'] = 'test'
                         src['label'] = test[scrcid]
-                        #flag shows source tweet is in train dataset
-                        flag = 'test'
-    #                    train_dev_tweets['train'].append(src)
                     else:
                         src['set'] = 'Null'
                         print "Tweet was not found! ID: ", foldr
@@ -126,21 +106,10 @@ def load_dataset():
                         tw['used'] = 0
                         replyid = tw['id_str']
                         if replyid in dev_tweets:
-                            tw['set'] = 'dev'
                             tw['label'] = dev[replyid]
-    #                        train_dev_tweets['dev'].append(tw)
-                            #source tweet in train dataset but reply tweet in dev dataset
-                            if flag == 'train':
-                                print "The tree is split between sets", foldr
                         elif replyid in train_tweets:
-                            tw['set'] = 'train'
                             tw['label'] = train[replyid]
-    #                        train_dev_tweets['train'].append(tw)
-                            #source tweet in dev dataset but reply in train dataset
-                            if flag == 'dev':
-                                print "The tree is split between sets", foldr
                         elif replyid in test_tweets:
-                            tw['set'] = 'test'
                             tw['label'] = test[replyid]
                         else:
                             tw['set'] = 'Null'
@@ -164,13 +133,10 @@ def load_dataset():
             conversation['structure'] = struct
             branches = tree2branches(conversation['structure'])
             conversation['branches'] = branches
-            train_dev_split[flag].append(conversation)
             allconv.append(conversation)
-        #cvfolds[fold] = allconv
-        #allconv = []
 
     # Load testing data
-    path_to_test = os.path.join('downloaded_data', 'semeval2017-task8-test-data')
+    path_to_test = os.path.join('../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
     test_folders = sorted(os.listdir(path_to_test))
     newfolds = [i for i in test_folders if i[0] != '.']
     test_folders = newfolds
@@ -186,23 +152,11 @@ def load_dataset():
                 src['used'] = 0
                 srcid = src['id_str']
                 if scrcid in dev_tweets:
-                    src['set'] = 'dev'
                     src['label'] = dev[scrcid]
-                    #flag shows source tweet is in dev dataset
-                    flag = 'dev'
-    #                train_dev_tweets['dev'].append(src)
                 elif scrcid in train_tweets:
-                    src['set'] = 'train'
                     src['label'] = train[scrcid]
-                    #flag shows source tweet is in train dataset
-                    flag = 'train'
-    #                train_dev_tweets['train'].append(src)
                 elif scrcid in test_tweets:
-                    src['set'] = 'test'
                     src['label'] = test[scrcid]
-                    #flag shows source tweet is in train dataset
-                    flag = 'test'
-    #                train_dev_tweets['train'].append(src)
                 else:
                     src['set'] = 'Null'
                     print "Tweet was not found! ID: ", foldr
@@ -221,21 +175,10 @@ def load_dataset():
                     tw['used'] = 0
                     replyid = tw['id_str']
                     if replyid in dev_tweets:
-                        tw['set'] = 'dev'
                         tw['label'] = dev[replyid]
-    #                    train_dev_tweets['dev'].append(tw)
-                        #source tweet in train dataset but reply tweet in dev dataset
-                        if flag == 'train':
-                            print "The tree is split between sets", foldr
                     elif replyid in train_tweets:
-                        tw['set'] = 'train'
                         tw['label'] = train[replyid]
-    #                    train_dev_tweets['train'].append(tw)
-                        #source tweet in dev dataset but reply in train dataset
-                        if flag == 'dev':
-                            print "The tree is split between sets", foldr
                     elif replyid in test_tweets:
-                        tw['set'] = 'test'
                         tw['label'] = test[replyid]
                     else:
                         tw['set'] = 'Null'
@@ -259,7 +202,6 @@ def load_dataset():
         conversation['structure'] = struct
         branches = tree2branches(conversation['structure'])
         conversation['branches'] = branches
-        train_dev_split['test'].append(conversation)
         allconv.append(conversation)
 
     return allconv
@@ -380,7 +322,7 @@ def loadW2vModel():
     global model
     print ("Loading the model")
     model = gensim.models.KeyedVectors.load_word2vec_format(
-            os.path.join('downloaded_data', 'GoogleNews-vectors-negative300.bin'), binary=True)
+            os.path.join('../branchLSTM/downloaded_data', 'GoogleNews-vectors-negative300.bin'), binary=True)
     print ("Done!")
 
 
@@ -695,6 +637,24 @@ def preprocess_data(train_dev_split, fold_num):
         if sset != 'test':
             np.save(os.path.join(path_to_save_sets, 'padlabel'), padlabel)
 
+def save_test_labels(train_dev_splits):
+    test_id_label = {}
+    test_label_path = 'true_test_labels'
+    if not os.path.exists(test_label_path):
+        os.makedirs(test_label_path)
+    for fold_num in range(len(train_dev_splits)):
+        print ("save %s test labels" % str(fold_num))
+        test_conv = train_dev_splits[fold_num]['test']
+        for conv in test_conv:
+            src = conv['source']
+            replies = conv["replies"]
+            test_id_label[src['id_str']] = src['label']
+            for reply in replies:
+                test_id_label[reply['id_str']] = reply['label']
+        with open(os.path.join(test_label_path,'fold%s.txt' % str(fold_num)), 'w+') as outfile:
+            json.dump(test_id_label, outfile)
+        test_id_label = {}
+
 if __name__ == "__main__":
 
     # Import NLTK data
@@ -706,6 +666,9 @@ if __name__ == "__main__":
 
     # 5-fold cross validation
     train_dev_splits = split_dataset(allconv)
+
+    #save true test dataset tweet_id:label
+    save_test_labels(train_dev_splits)
 
     '''
     for i in range(len(train_dev_splits)):
