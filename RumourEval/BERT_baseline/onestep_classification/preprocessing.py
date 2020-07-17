@@ -35,7 +35,7 @@ def load_true_labels(dataset_name):
     traindev_path = os.path.join("../../branchLSTM/downloaded_data", "semeval2017-task8-dataset", "traindev")
     data_files = {"dev": os.path.join(traindev_path, "rumoureval-subtaskA-dev.json"),
                   "train": os.path.join(traindev_path, "rumoureval-subtaskA-train.json"),
-                  "test": "subtaska.json"}
+                  "test": "../../branchLSTM/subtaska.json"}
 
     # Load the dictionary containing the tweets and labels from the .json file
     with open(data_files[dataset_name]) as f:
