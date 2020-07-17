@@ -137,14 +137,14 @@ def eval_train_model(params, fold_num):
         for batch in iterate_minibatches(brancharray, train_mask,
                                          train_rmdoublemask,
                                          train_label, mb_size,
-                                         max_seq_len=25, shuffle=False):
+                                         max_seq_len=6, shuffle=False):
                 inputs, mask, rmdmask, targets = batch
                 train_err += train_fn(inputs, mask,
                                       rmdmask, targets)
         for batch in iterate_minibatches(dev_brancharray, dev_mask,
                                          dev_rmdoublemask,
                                          dev_label, mb_size,
-                                         max_seq_len=20, shuffle=False):
+                                         max_seq_len=6, shuffle=False):
                 inputs, mask, rmdmask, targets = batch
                 train_err += train_fn(inputs, mask,
                                       rmdmask, targets)
