@@ -95,8 +95,9 @@ def get_true_and_predicted_classes(true_tweet_classes, predicted_tweet_classes):
 
     # Generate lists of true and predicted classes for all tweets in this set
     for k in true_tweet_classes.keys():
-        true.append(true_tweet_classes[k])
-        pred.append(predicted_tweet_classes[k])
+        if k in predicted_tweet_classes.keys():
+            true.append(true_tweet_classes[k])
+            pred.append(predicted_tweet_classes[k])
 
     return true, pred
 

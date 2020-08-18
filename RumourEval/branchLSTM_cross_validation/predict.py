@@ -11,6 +11,7 @@ import theano
 import theano.tensor as T
 import lasagne
 import os
+import re
 import pickle
 from hyperopt import STATUS_OK
 from training import build_nn,iterate_minibatches
@@ -34,6 +35,13 @@ def eval_train_model(params, fold_num):
 #%%
     # Load data
     path = 'saved_data_new/fold' + str(fold_num)
+    train_arrays_file = open(os.path.join(path, 'train/branch_arrays.npy'))
+    train_arrays_max_len = re.findall(r'\d+', train_arrays_file.readline())[-2]
+    print "train branch arrays max len: %s" % train_arrays_max_len
+    dev_arrays_file = open(os.path.join(path, 'dev/branch_arrays.npy'))
+    dev_arrays_max_len = re.findall(r'\d+', dev_arrays_file.readline())[-2]
+    print "dev branch arrays max len: %s" % dev_arrays_max_len
+
     brancharray = numpy.load(os.path.join(path, 'train/branch_arrays.npy'))
     num_features = numpy.shape(brancharray)[-1]
     train_mask = numpy.load(os.path.join(path,
@@ -137,14 +145,14 @@ def eval_train_model(params, fold_num):
         for batch in iterate_minibatches(brancharray, train_mask,
                                          train_rmdoublemask,
                                          train_label, mb_size,
-                                         max_seq_len=6, shuffle=False):
+                                         max_seq_len=int(train_arrays_max_len), shuffle=False):
                 inputs, mask, rmdmask, targets = batch
                 train_err += train_fn(inputs, mask,
                                       rmdmask, targets)
         for batch in iterate_minibatches(dev_brancharray, dev_mask,
                                          dev_rmdoublemask,
                                          dev_label, mb_size,
-                                         max_seq_len=6, shuffle=False):
+                                         max_seq_len=int(dev_arrays_max_len), shuffle=False):
                 inputs, mask, rmdmask, targets = batch
                 train_err += train_fn(inputs, mask,
                                       rmdmask, targets)

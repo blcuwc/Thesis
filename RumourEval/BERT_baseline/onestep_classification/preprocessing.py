@@ -134,6 +134,7 @@ def load_dataset():
             branches = tree2branches(conversation['structure'])
             conversation['branches'] = branches
             allconv.append(conversation)
+            conversation = {}
 
     # Load testing data
     path_to_test = os.path.join('../../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
@@ -203,7 +204,7 @@ def load_dataset():
         branches = tree2branches(conversation['structure'])
         conversation['branches'] = branches
         allconv.append(conversation)
-
+        conversation = {}
     return allconv
 
 def split_dataset(allconv):

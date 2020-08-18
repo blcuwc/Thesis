@@ -26,6 +26,7 @@ import re
 from nltk.corpus import stopwords
 from copy import deepcopy
 import pickle
+import emoji
 
 
 def load_true_labels(dataset_name):
@@ -134,6 +135,7 @@ def load_dataset():
             branches = tree2branches(conversation['structure'])
             conversation['branches'] = branches
             allconv.append(conversation)
+            conversation = {}
 
     # Load testing data
     path_to_test = os.path.join('../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
@@ -203,7 +205,7 @@ def load_dataset():
         branches = tree2branches(conversation['structure'])
         conversation['branches'] = branches
         allconv.append(conversation)
-
+        conversation = {}
     return allconv
 
 def split_dataset(allconv):
@@ -217,8 +219,10 @@ def split_dataset(allconv):
 
     folds = []
     fold_length = int(len(allconv)/5)
+    #print "fold length: %s" % str(fold_length)
     for i in range(5):
         fold = allconv[i*fold_length:(i+1)*fold_length]
+        print "fold %s conversation number: %s" % (str(i), str(len(fold)))
         folds.append(fold)
     folds[-1] += allconv[fold_length*5:len(allconv)]
 
@@ -655,6 +659,9 @@ def save_test_labels(train_dev_splits):
             json.dump(test_id_label, outfile)
         test_id_label = {}
 
+def deEmojify(text):
+    return text.encode('ascii', 'ignore').decode('ascii')
+
 if __name__ == "__main__":
 
     # Import NLTK data
@@ -667,21 +674,29 @@ if __name__ == "__main__":
     # 5-fold cross validation
     train_dev_splits = split_dataset(allconv)
 
+    # check the conversation texts: duplicates or blank line
+    '''
+    i = 0
+    for split in train_dev_splits:
+        log_file = open("fold_text%s" % str(i), 'w')
+        log_file.write("fold %s test texts:\n" % str(i))
+        i = i + 1
+        for conv in split['test']:
+            #print emoji.demojize(conv['source']['text'])
+            source_text = emoji.demojize(conv['source']['text'])
+            log_file.write(deEmojify(source_text))
+            for reply in conv['replies']:
+                #print emoji.demojize(reply['text'])
+                reply_text = emoji.demojize(reply['text'])
+                log_file.write(deEmojify(reply_text))
+        log_file.close()
+    '''
+
     #save true test dataset tweet_id:label
     save_test_labels(train_dev_splits)
 
-    '''
-    for i in range(len(train_dev_splits)):
-        print ("split"+str(i))
-        print ("train dataset conversation length:")
-        print (len(train_dev_splits[i]['train']))
-        print ("dev dataset conversation length:")
-        print (len(train_dev_splits[i]['dev']))
-        print ("test dataset conversation length:")
-        print (len(train_dev_splits[i]['test']))
-    '''
-
     loadW2vModel()
+
     # Import the data, preprocess it and store in the saved_data folder
     for i in range(len(train_dev_splits)):
         preprocess_data(train_dev_splits[i], i)

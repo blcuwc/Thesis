@@ -139,6 +139,7 @@ def load_dataset():
             branches = tree2branches(conversation['structure'])
             conversation['branches'] = branches
             allconv.append(conversation)
+            conversation = {}
 
     # Load testing data
     path_to_test = os.path.join('../../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
@@ -208,6 +209,7 @@ def load_dataset():
         branches = tree2branches(conversation['structure'])
         conversation['branches'] = branches
         allconv.append(conversation)
+        conversation = {}
 
     return allconv
 
@@ -294,14 +296,14 @@ def Extract_dataset(train_dev_split):
         for conversation in con_list:
             source_tweet = conversation['source']
             replies = conversation['replies']
-            if 'label' not in source_tweet.keys() or source_tweet['text'] == None:
+            if 'label' not in source_tweet.keys() or source_tweet['text'] == None or source_tweet['text'] in tweet_list:
                 pass
             else:
                 tweet_list.append(source_tweet['text'])
                 label_list.append(source_tweet['label'])
                 id_list.append(source_tweet['id_str'])
             for reply_tweet in replies:
-                if 'label' not in reply_tweet.keys() or reply_tweet['text'] == None:
+                if 'label' not in reply_tweet.keys() or reply_tweet['text'] == None or reply_tweet['text'] in tweet_list:
                     continue
                 else:
                     tweet_list.append(reply_tweet['text'])

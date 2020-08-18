@@ -92,7 +92,7 @@ def build_nn(input_var, mask, num_features, num_lstm_layers, num_lstm_units,
 
 
 def iterate_minibatches(inputs, mask, rmdoublemask, targets,
-                        batchsize, max_seq_len=6, shuffle=False):
+                        batchsize, max_seq_len=25, shuffle=False):
 
     targets = numpy.reshape(targets, (-1, max_seq_len))
     rmdoublemask = numpy.reshape(rmdoublemask, (-1, max_seq_len))
