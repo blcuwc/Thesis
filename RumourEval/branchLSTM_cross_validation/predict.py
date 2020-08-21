@@ -21,7 +21,7 @@ from training import build_nn,iterate_minibatches
 
 
 def eval_train_model(params, fold_num):
-    print ("Retrain model on train+dev set and evaluate on testing set")
+    print "Fold %s retrain model on train+dev set and evaluate on testing set" % str(fold_num)
     # Initialise parameters 
     num_lstm_units = int(params['num_lstm_units'])
     num_lstm_layers = int(params['num_lstm_layers'])
@@ -34,7 +34,7 @@ def eval_train_model(params, fold_num):
     rng_seed = params['rng_seed']
 #%%
     # Load data
-    path = 'saved_data_new/fold' + str(fold_num)
+    path = 'saved_data/fold%s/' % str(fold_num)
     train_arrays_file = open(os.path.join(path, 'train/branch_arrays.npy'))
     train_arrays_max_len = re.findall(r'\d+', train_arrays_file.readline())[-2]
     print "train branch arrays max len: %s" % train_arrays_max_len

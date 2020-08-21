@@ -34,6 +34,7 @@ If running with default parametes then search won't be performed and
 parameters will be used from 'output/bestparams.txt'
 
 """
+import sys
 import timeit
 import os
 import pickle
@@ -130,41 +131,33 @@ def convertlabeltostr(label):
 #%%
 
 
-def eval(params):
+def eval(params, fold_num):
     start = timeit.default_timer()
-    results = []
-    result_dictionaries = []
-    for fold_num in range(5):
-        print "predict fold num: ", fold_num
-        result = eval_train_model(params, fold_num)
-        # Convert result to scorer.py format
-        keys = pickle.loads(result['attachments']['ID'])
-        values = pickle.loads(result['attachments']['Predictions'])
-        values = [convertlabeltostr(s) for s in values] 
-        result_dictionary = dict(zip(keys, values))
-        results.append(result)
-        result_dictionaries.append(result_dictionary)
+    result = eval_train_model(params, fold_num)
+    # Convert result to scorer.py format
+    keys = pickle.loads(result['attachments']['ID'])
+    values = pickle.loads(result['attachments']['Predictions'])
+    values = [convertlabeltostr(s) for s in values] 
+    result_dictionary = dict(zip(keys, values))
     
-    out_path = 'output_new'
+    out_path = 'output'
     if not os.path.exists(out_path):
         os.makedirs(out_path)
     
-    for i in range(5):
-        print "save fold num: ", i
-        f = open(os.path.join(out_path,'result%s.txt' % str(i)), "w+")
-        pickle.dump(results[i], f)
-        f.close()
+    f = open(os.path.join(out_path,'result_fold%s.txt' % str(fold_num)), "w+")
+    pickle.dump(result, f)
+    f.close()
 
-        with open(os.path.join(out_path,'prediction%s.txt' % str(i)), 'w+') as outfile:
-            json.dump(result_dictionaries[i], outfile)
-    print ("saved result and predictions")
+    with open(os.path.join(out_path,'prediction_fold%s.txt' % str(fold_num)), 'w+') as outfile:
+        json.dump(result_dictionary, outfile)
+    print ("saved result and predictions for fold%s" % str(fold_num))
     stop = timeit.default_timer()
     print ("Time: ",stop - start)
     
 #%%
 
 
-def main():
+def main(fold_num):
     parser = OptionParser()
     parser.add_option(
             '--search', dest='psearch', default=False,
@@ -200,17 +193,20 @@ def main():
             print '\nStarting parameter search...\n'
         params = parameter_search(ntrials, hyperopt_seed, is_test)
         print(params)
-        eval(params)
+        eval(params. fold_num)
     else:
         with open(params_file, 'rb') as f:
             print '\nLoading best set of model parameters from ', params_file, '...\n'
             params = pickle.load(f)
         print (params)
-        eval(params)
+        eval(params, fold_num)
         
 #%%
 
 
 if __name__ == '__main__':
-    print ("Main function:\n")
-    main()
+    fold_num = sys.argv[1]
+    print ("Fold %s main function:\n" % str(fold_num))
+    main(fold_num)
+
+    sys.stdout.flush()
