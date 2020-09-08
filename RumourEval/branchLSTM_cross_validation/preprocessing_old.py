@@ -17,8 +17,6 @@ python2 preprocessing.py
 Saves processed data in saved_data folder
 
 """
-
-import sys
 import os
 import numpy as np
 import json
@@ -28,6 +26,7 @@ import re
 from nltk.corpus import stopwords
 from copy import deepcopy
 import pickle
+import emoji
 
 
 def load_true_labels(dataset_name):
@@ -63,14 +62,9 @@ def load_dataset():
     folds = sorted(os.listdir(path_to_folds))
     newfolds = [i for i in folds if i[0] != '.']
     folds = newfolds
-    cvfolds = {}
     allconv = []
     weird_conv = []
     weird_struct = []
-    train_dev_split = {}
-    train_dev_split['dev'] = []
-    train_dev_split['train'] = []
-    train_dev_split['test'] = []
     for nfold, fold in enumerate(folds):
         path_to_tweets = os.path.join(path_to_folds, fold)
         tweet_data = sorted(os.listdir(path_to_tweets))
@@ -89,23 +83,12 @@ def load_dataset():
                     src = json.loads(line)
                     src['used'] = 0
                     scrcid = src['id_str']
-                    # add set and label to tweet info
-                    # first find the tweet in one of the sets
-                    # foldr - src tweet id
                     if scrcid in dev_tweets:
-                        src['set'] = 'dev'
                         src['label'] = dev[scrcid]
-                        #flag shows source tweet is in dev dataset
-                        flag = 'dev'
-    #                    train_dev_tweets['dev'].append(src)
                     elif scrcid in train_tweets:
-                        src['set'] = 'train'
                         src['label'] = train[scrcid]
-                        #flag shows source tweet is in train dataset
-                        flag = 'train'
-    #                    train_dev_tweets['train'].append(src)
-                    elif scrid in test_tweets:
-                        src['label'] = test[scrid]
+                    elif scrcid in test_tweets:
+                        src['label'] = test[scrcid]
                     else:
                         src['set'] = 'Null'
                         print "Tweet was not found! ID: ", foldr
@@ -124,21 +107,10 @@ def load_dataset():
                         tw['used'] = 0
                         replyid = tw['id_str']
                         if replyid in dev_tweets:
-                            tw['set'] = 'dev'
                             tw['label'] = dev[replyid]
-    #                        train_dev_tweets['dev'].append(tw)
-                            #source tweet in train dataset but reply tweet in dev dataset
-                            if flag == 'train':
-                                print "The tree is split between sets", foldr
                         elif replyid in train_tweets:
-                            tw['set'] = 'train'
                             tw['label'] = train[replyid]
-    #                        train_dev_tweets['train'].append(tw)
-                            #source tweet in dev dataset but reply in train dataset
-                            if flag == 'dev':
-                                print "The tree is split between sets", foldr
                         elif replyid in test_tweets:
-                            tw['set'] = 'test'
                             tw['label'] = test[replyid]
                         else:
                             tw['set'] = 'Null'
@@ -156,16 +128,14 @@ def load_dataset():
                 new_struct = {}
                 new_struct[foldr] = struct[foldr]
                 struct = new_struct
-                weird_conv.append(conversation.copy())
+                weird_conv.append(conversation)
                 weird_struct.append(struct)
                 # Take item from structure if key is same as source tweet id
             conversation['structure'] = struct
             branches = tree2branches(conversation['structure'])
             conversation['branches'] = branches
-            train_dev_split[flag].append(conversation.copy())
-            allconv.append(conversation.copy())
-        cvfolds[fold] = allconv
-        allconv = []
+            allconv.append(conversation)
+            conversation = {}
 
     # Load testing data
     path_to_test = os.path.join('../branchLSTM/downloaded_data', 'semeval2017-task8-test-data')
@@ -174,6 +144,7 @@ def load_dataset():
     test_folders = newfolds
     conversation = {}
     for tfldr in test_folders:
+        flag = 0
         conversation['id'] = tfldr
         path_src = path_to_test+'/'+tfldr+'/source-tweet'
         files_t = sorted(os.listdir(path_src))
@@ -192,6 +163,8 @@ def load_dataset():
                     src['set'] = 'Null'
                     print "Tweet was not found! ID: ", foldr
         conversation['source'] = src
+        if src['text'] is None:
+            print "Tweet has no text", src['id']
         tweets = []
         path_repl = path_to_test+'/'+tfldr+'/replies'
         files_t = sorted(os.listdir(path_repl))
@@ -220,13 +193,57 @@ def load_dataset():
         with open(path_struct) as f:
             for line in f:
                 struct = json.loads(line)
+        if len(struct) > 1:
+            # print "Structure has more than one root"
+            new_struct = {}
+            new_struct[tfldr] = struct[tfldr]
+            struct = new_struct
+            weird_conv.append(conversation.copy())
+            weird_struct.append(struct)
+            # Take item from structure if key is same as source tweet id
         conversation['structure'] = struct
         branches = tree2branches(conversation['structure'])
         conversation['branches'] = branches
-        train_dev_split['test'].append(conversation.copy())
+        allconv.append(conversation)
+        conversation = {}
+    return allconv
 
-    return train_dev_split
+def split_dataset(allconv):
+    train_dev_splits = []
+    train_dev_split = {}
+    train_dev_split['dev'] = []
+    train_dev_split['train'] = []
+    train_dev_split['test'] = []
+    np.random.seed(5)
+    np.random.shuffle(allconv)
 
+    folds = []
+    fold_length = int(len(allconv)/5)
+    #print "fold length: %s" % str(fold_length)
+    for i in range(5):
+        fold = allconv[i*fold_length:(i+1)*fold_length]
+        print "fold %s conversation number: %s" % (str(i), str(len(fold)))
+        folds.append(fold)
+    folds[-1] += allconv[fold_length*5:len(allconv)]
+
+    for i in range(len(folds)):
+        #print ("folds"+ str(i), folds[i])
+        train_dev_split['test'] = folds[i]
+        train_dev_split['dev'] = folds[i-4]
+        for fold in folds:
+            if fold != folds[i] and fold != folds[i-4]:
+                train_dev_split['train'] += fold
+        #print ("train_dev_split:")
+        #print (train_dev_split)
+        train_dev_splits.append(train_dev_split)
+        train_dev_split = {}
+        train_dev_split['dev'] = []
+        train_dev_split['train'] = []
+        train_dev_split['test'] = []
+        #print ("train_dev_splits:")
+        #print (train_dev_splits)
+
+    return train_dev_splits
 
 def tree2branches(root):
     node = root
@@ -306,14 +323,15 @@ def str_to_wordlist(tweettext, tweet, remove_stopwords=False):
 
 def loadW2vModel():
     # LOAD PRETRAINED MODEL
+    global model
     print ("Loading the model")
     model = gensim.models.KeyedVectors.load_word2vec_format(
             os.path.join('../branchLSTM/downloaded_data', 'GoogleNews-vectors-negative300.bin'), binary=True)
     print ("Done!")
-    return model
 
 
-def sumw2v(model, tweet, avg=True):
+def sumw2v(tweet, avg=True):
+    global model
     num_features = 300
     temp_rep = np.zeros(num_features)
     wordlist = str_to_wordlist(tweet['text'], tweet, remove_stopwords=False)
@@ -328,7 +346,8 @@ def sumw2v(model, tweet, avg=True):
     return sumw2v
 
 
-def getW2vCosineSimilarity(model, words, wordssrc):
+def getW2vCosineSimilarity(words, wordssrc):
+    global model
     words2 = []
     for word in words:
         if word in model.vocab:  # change to model.wv.vocab
@@ -344,7 +363,7 @@ def getW2vCosineSimilarity(model, words, wordssrc):
 #%%
 
 
-def tweet2features(model, tw, i, branch, conversation):
+def tweet2features(tw, i, branch, conversation):
 
     tokens = nltk.word_tokenize(re.sub(r'([^\s\w]|_)+',
                                        '', tw['text'].lower()))
@@ -435,16 +454,16 @@ def tweet2features(model, tw, i, branch, conversation):
 #%%
 # W2vSimilarity wrt prev, thread, src
     if i > 0:
-        Word2VecSimilarityWrtSource = getW2vCosineSimilarity(model, tokens, srctokens)
-        Word2VecSimilarityWrtPrev = getW2vCosineSimilarity(model, tokens, prevtokens)
+        Word2VecSimilarityWrtSource = getW2vCosineSimilarity(tokens, srctokens)
+        Word2VecSimilarityWrtPrev = getW2vCosineSimilarity(tokens, prevtokens)
     else:
         Word2VecSimilarityWrtSource = 0
         Word2VecSimilarityWrtPrev = 0
-    Word2VecSimilarityWrtOther = getW2vCosineSimilarity(model, tokens,
+    Word2VecSimilarityWrtOther = getW2vCosineSimilarity(tokens,
                                                         otherthreadtokens)
 
 #%%
-    avgw2v = sumw2v(model, tw, avg=True)
+    avgw2v = sumw2v(tw, avg=True)
     features = [charcount, wordcount, issourcetw, hasqmark, hasemark,
                 hasperiod, hasurl, haspic, hasnegation, hasswearwords,
                 capitalratio, Word2VecSimilarityWrtSource,
@@ -466,13 +485,12 @@ def convertlabel(label):
     else:
         print(label)
 
-def preprocess_data(train_dev_splits, fold_num):
+def preprocess_data(train_dev_split, fold_num):
     # Create train X, train Y, dev X, dev Y
 
     #%%
-    model = loadW2vModel()
     #find max branch length
-    train_dev_split = train_dev_splits[int(fold_num)]
+    #train_dev_split = load_dataset()
 
     max_branch_len = {}
     max_branch_len['train'] = 0
@@ -510,6 +528,7 @@ def preprocess_data(train_dev_splits, fold_num):
     dumplabel['dev'] = []
     dumplabel['test'] = []
 
+    #print ("num fold: ", fold_num)
     for sset in whichset:
         for conversation in train_dev_split[sset]:
             all_br_len = []
@@ -553,7 +572,7 @@ def preprocess_data(train_dev_splits, fold_num):
                     else:
                         # if tweet is new then
                         # get tweet's representation
-                        representation = tweet2features(model, tweet, i,
+                        representation = tweet2features(tweet, i,
                                                         branch, conversation)
                         tweet['representation'] = representation
                         tweet['used'] = 1
@@ -574,8 +593,10 @@ def preprocess_data(train_dev_splits, fold_num):
     num_features = 314
 
     for sset in whichset:
-        path_to_saved_data = './saved_data/fold%s/' % str(fold_num)
+        #print ("which set: ", sset)
+        path_to_saved_data = './saved_data_new/' + 'fold' + str(fold_num)
         path_to_save_sets = os.path.join(path_to_saved_data, sset)
+        #print ("path_to_save_sets: ", path_to_save_sets)
         if not os.path.exists(path_to_save_sets):
             os.makedirs(path_to_save_sets)
         temp_list = []
@@ -620,64 +641,62 @@ def preprocess_data(train_dev_splits, fold_num):
         if sset != 'test':
             np.save(os.path.join(path_to_save_sets, 'padlabel'), padlabel)
 
-def Cross_validation_threads(train_dev_split):
-    train_dev_splits = []
-    one_split = {}
-    dev_thread_number = len(train_dev_split['dev'])
-    test_thread_number = len(train_dev_split['test'])
-    np.random.seed(50)
-    np.random.shuffle(train_dev_split['train'])
-    for i in range(5):
-        dev_threads = train_dev_split['train'][i * (dev_thread_number + test_thread_number) : i * (dev_thread_number + test_thread_number) + dev_thread_number]
-        test_threads = train_dev_split['train'][i * (dev_thread_number + test_thread_number) + dev_thread_number : (i + 1) * (dev_thread_number + test_thread_number)]
-        train_threads = [item for item in train_dev_split['train'] if item not in dev_threads and item not in test_threads]  + train_dev_split['dev'] + train_dev_split['test']
-        one_split['train'] = train_threads
-        one_split['dev'] = dev_threads
-        one_split['test'] = test_threads
-        train_dev_splits.append(one_split)
-        one_split = {}
-        #print "fold %s" % str(i)
-        #print "train thread number:%s" % str(len(train_threads))
-        #print "dev threads number:%s" % str(len(dev_threads))
-        #print "test threads number:%s" % str(len(test_threads))
-        #print "test threads ID:"
-    return train_dev_splits
-
-def save_test_labels(train_dev_splits, fold_num):
-    train_dev_split = train_dev_splits[int(fold_num)]
+def save_test_labels(train_dev_splits):
     test_id_label = {}
     test_label_path = 'true_test_labels'
     if not os.path.exists(test_label_path):
         os.makedirs(test_label_path)
-    print ("save fold%s test labels" % str(fold_num))
-    test_conv = train_dev_split['test']
-    for conv in test_conv:
-        src = conv['source']
-        replies = conv["replies"]
-        test_id_label[src['id_str']] = src['label']
-        for reply in replies:
-            test_id_label[reply['id_str']] = reply['label']
-    with open(os.path.join(test_label_path,'fold%s.txt' % str(fold_num)), 'w+') as outfile:
-        json.dump(test_id_label, outfile)
+    for fold_num in range(len(train_dev_splits)):
+        print ("save %s test labels" % str(fold_num))
+        test_conv = train_dev_splits[fold_num]['test']
+        for conv in test_conv:
+            src = conv['source']
+            replies = conv["replies"]
+            test_id_label[src['id_str']] = src['label']
+            for reply in replies:
+                test_id_label[reply['id_str']] = reply['label']
+        with open(os.path.join(test_label_path,'fold%s.txt' % str(fold_num)), 'w+') as outfile:
+            json.dump(test_id_label, outfile)
+        test_id_label = {}
+
+def deEmojify(text):
+    return text.encode('ascii', 'ignore').decode('ascii')
 
 if __name__ == "__main__":
-
-    # Read fold num for cross validation
-    fold_num = sys.argv[1]
-    print "Preprocessing fold: %s" % str(fold_num)
 
     # Import NLTK data
     nltk_data_location = os.path.dirname(os.path.realpath(__file__))
     nltk.download('punkt', download_dir=nltk_data_location)
 
-    train_dev_split = load_dataset()
+    # get all conversations
+    allconv = load_dataset()
 
-    train_dev_splits = Cross_validation_threads(train_dev_split)
+    # 5-fold cross validation
+    train_dev_splits = split_dataset(allconv)
+
+    # check the conversation texts: duplicates or blank line
+    '''
+    i = 0
+    for split in train_dev_splits:
+        log_file = open("fold_text%s" % str(i), 'w')
+        log_file.write("fold %s test texts:\n" % str(i))
+        i = i + 1
+        for conv in split['test']:
+            #print emoji.demojize(conv['source']['text'])
+            source_text = emoji.demojize(conv['source']['text'])
+            log_file.write(deEmojify(source_text))
+            for reply in conv['replies']:
+                #print emoji.demojize(reply['text'])
+                reply_text = emoji.demojize(reply['text'])
+                log_file.write(deEmojify(reply_text))
+        log_file.close()
+    '''
 
     #save true test dataset tweet_id:label
-    save_test_labels(train_dev_splits, fold_num)
+    save_test_labels(train_dev_splits)
+
+    loadW2vModel()
 
     # Import the data, preprocess it and store in the saved_data folder
-    preprocess_data(train_dev_splits, fold_num)
-    
-    sys.stdout.flush()
+    for i in range(len(train_dev_splits)):
+        preprocess_data(train_dev_splits[i], i)
