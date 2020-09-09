@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     #dataset['test'] = {tweet_id : [text, true_label, predicted_label]}
     for tweet_id, predicted_label in predictions.items():
-        if tweet_id in list(dataset['test']).keys():
+        if tweet_id in list(dataset['test'].keys()):
             dataset['test'][tweet_id].append(predicted_label)
 
     print ("tweet_id\ttweet_text\ttrue_label\tpredicted_label")
