@@ -34,6 +34,23 @@ def get_predictions(fold_num):
     submission = json.load(open(submission_file, 'r'))
     return submission
 
+def print_fp_fn(dataset):
+    print ("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label")
+
+    # print commnet false positive samples
+    i = 0
+    for tweet_id, info_list in dataset['test'].items():
+        if info_list[1] != 'comment' and info_list[2] == 'comment':
+            print (str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
+            i += 1
+
+    i = 0
+    # print comment false negative samples
+    for tweet_id, info_list in dataset['test'].items():
+        if info_list[1] == 'comment' and info_list[2] != 'comment':
+            print (str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
+            i += 1
+
 if __name__ == "__main__":
 
     # Read fold num for error analysis
@@ -54,8 +71,5 @@ if __name__ == "__main__":
     for tweet_id, predicted_label in predictions.items():
         if tweet_id in list(dataset['test'].keys()):
             dataset['test'][tweet_id].append(predicted_label)
-
-    print ("tweet_id\ttweet_text\ttrue_label\tpredicted_label")
-    for tweet_id, info_list in dataset['test'].items():
-        print (tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
-
+    
+    print_fp_fn(dataset)
