@@ -5,6 +5,8 @@ import os
 import json
 import pickle
 from preprocessing import load_dataset, Cross_validation_threads
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def Extract_dataset(train_dev_split):
     dataset = {}

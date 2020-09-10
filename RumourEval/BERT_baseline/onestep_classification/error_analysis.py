@@ -5,6 +5,8 @@ import os
 import json
 import pickle
 from preprocessing import load_dataset, Cross_validation_threads
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def Extract_dataset(train_dev_split):
     dataset = {}
@@ -38,11 +40,11 @@ def print_fp_fn(dataset):
     print ("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label")
 
     # print commnet false positive samples
-    i = 0
-    for tweet_id, info_list in dataset['test'].items():
-        if info_list[1] != 'comment' and info_list[2] == 'comment':
-            print (str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
-            i += 1
+    #i = 0
+    #for tweet_id, info_list in dataset['test'].items():
+    #    if info_list[1] != 'comment' and info_list[2] == 'comment':
+    #        print (str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
+    #        i += 1
 
     i = 0
     # print comment false negative samples
