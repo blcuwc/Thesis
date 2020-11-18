@@ -1,0 +1,5 @@
+fold 0: {"C": 0.9, "gamma": 0.055, "kernel": "rbf"}
+fold 1: {"C": 1, "gamma": 0.065, "kernel": "rbf"}
+fold 2: {"C": 1, "gamma": 0.045, "kernel": "linear"}
+fold 3: {"C": 0.8, "gamma": 0.055, "kernel": "rbf"}
+fold 4: {"C": 0.85, "gamma": 0.045, "kernel": "linear"}
