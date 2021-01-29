@@ -1,0 +1,16 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544466740332462080	The facts @smh: Sydney airspace wasn't closed. 2nd terror suspect wasn't arrested. Myths of #sydneysiege debunked. http://t.co/m9YA5LJg7w	deny	support
+1	544517449606234112	@DazMSmith - Indeed. Wondering why he wasn't locked up or deported when he was accused...	comment	support
+2	529746860714758145	“@CBCNews: Prince not playing Massey Hall tonight, promoter says http://t.co/IUaL2ulFZf http://t.co/ZDYfGmZKX0” good. I was feeling bitter.	comment	support
+3	544314961749880833	Uber sux&gt;&gt; “@mashable: Uber intros surge pricing in downtown Sydney during hostage siege http://t.co/p8nmsPNYs2 http://t.co/Flk22fdUIi”	comment	support
+4	544764006368411648	“@johnyD69: @leftocentre @riffraff0001 @onewaymule87 @smh @ZJGarred Doing what Hadley does best”  Indeed.	comment	support
+5	553550697128796161	@Reuters And 2 or 3 people killed. Unconfirmed.	comment	support
+6	529739968470867968	Prince not playing Massey Hall tonight, promoter says http://t.co/clVHvM07kx http://t.co/IADirsFOOC	deny	support
+7	525023033585827840	@CTVNews shooting suspect http://t.co/NIMwIg5Ewb	comment	support
+8	500378287898918912	@thelittleidiot Yes but it does warrant being shot to death by the store owner. Its called Karma.  Guy has a rap sheet as long as your arm	comment	support
+9	552839226317094912	Police Officer down in picture, killed by armed terrorists who shouted, "the prophet is avenged" after slaughtering him. @MashableNews	comment	support
+10	553550971167834113	@Reuters 2 confirmed dead in shooting before he took hostages... @The_Smoking_Pen	comment	support
+11	544462330105712640	Sydney airspace wasn't closed. A second terror suspect wasn't arrested. Myths around #sydneysiege debunked. http://t.co/yTLKLUKnFd	deny	support
+12	544316055670493184	Another blow to a terribly-run company. “@mashable: Uber intros surge pricing in Sydney during hostage siege http://t.co/wrcKAm0uOL”	comment	support
+13	500386770857758721	“@WSJ: #Ferguson police: Officer involved in fatal shooting of Michael Brown didn't know he was suspect. http://t.co/QnHjIqXGlq”still ridic😠	comment	support
+14	524926985454518272	"@CTVMontreal: One person shot outside Centre Block, 2nd wounded inside the building in Parliament Hill shooting http://t.co/YaZ5ptIm5y" &gt;:(	comment	support

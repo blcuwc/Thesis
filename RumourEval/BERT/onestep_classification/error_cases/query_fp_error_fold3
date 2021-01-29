@@ -1,0 +1,22 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	553539141443788800	@AP For fucks sake get your act together Paris. What are you guys doing?	comment	query
+1	553584470264410113	@RT_com where's Eddy Caplan when you need him	comment	query
+2	553524499803815937	@NBCNews these the same Islamic Terrorists you  claimed were dead a couple days ago?	support	query
+3	524930715021213696	@ChristoferU @CBCAlerts @CBCNews Seriously? Likelihood that it's an ISIS attack and THIS is your response???	comment	query
+4	576281472778182656	So if #RamzanKadyrov had #BorisNemtsov assassinated was it at the direction of Putin or is/was Putin at the direction of FSB/Kadyrov? Hmm	support	query
+5	552835091714416640	@RT_com now that is better grammar	comment	query
+6	544281932406599681	@mscott does not seem to work on mobile in the US. What about your YouTube stream? http://t.co/f10qWjDBxv	comment	query
+7	552813949427544064	@hassanbasmer Muslims are being persecuted for their religion? In Pakistan, Nigeria or Paris? @DaliaChai @cnnbrk #CharlieHebdo	comment	query
+8	499918462295490560	@AnonymousPress And this isn't tyranny because ...?? Beuller??	comment	query
+9	553541692243316737	@FRANCE24 @HarrietBaldwin It's time 4 West 2 make formal declaration of war vs Islamic Terrorists but is there country with courage 2 do so?	comment	query
+10	544419151973208064	@TheRihan @BBCBreaking Stockholm syndrome?  What planet are you on?	comment	query
+11	553538493738405888	@AP Locate more photo here! http://t.co/Xh5bm7I3Su	comment	query
+12	553509546602553344	@NBCNews @WikileaksTruck didn't the cops ask you NOT to give this kind of detail?  what is wrong with you?	comment	query
+13	576276947648405505	Coup in #Russia? Good article by @Forbes. http://t.co/aaNCpb0blW #RamzanKadyrov #Putin #putindead http://t.co/OfivdTlTbO	support	query
+14	544279768636465152	How hard is it to turn down the external sound ABC? @mscott @grogsgamut	comment	query
+15	552818300124545025	@hassanbasmer @DaliaChai do you live in an actual tent? And is your name Saladin or something	comment	query
+16	500286059885125632	@zellieimani is that even him in the stills?	deny	query
+17	552816676249403393	@hassanbasmer @DaliaChai @cnnbrk why are we not talking of Gaza, ya sidi?	comment	query
+18	553574968563625985	Who buys Kosher? MT @RT_com: BREAKING: Gunman at kosher grocery store threatens to kill hostages if police storm terrorist brothers.	support	query
+19	500296531036364800	@ReutersUS then put him under 24/7/365 guard???	comment	query
+20	500284699546517505	If there is surveillance of a robbery why release stills and not the video itself? #Ferguson	comment	query

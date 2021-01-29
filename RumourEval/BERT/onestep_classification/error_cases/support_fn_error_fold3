@@ -1,0 +1,28 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544368900797124608	@FoxNews hope the baddies don’t have social media or they’re gonna start locking the side doors people escaped from.	support	comment
+1	500279402635067393	@edeweysmith he just admitted on national TV that Michael Brown was racially profiled	support	comment
+2	500365550351290371	@zellieimani It doesn't matter. The cop shouldn't have killed him. Also, I'd like to see the damn injuries the wussy cop had.	support	deny
+3	553187846035873793	"@SkyNews: The #CharlieHebdo attack suspects have reportedly fired shots while robbing a petrol station http://t.co/tsAnzcpItl #Thieves	support	comment
+4	500285091394764801	Video manipulation takes time. RT @zellieimani: If there is surveillance of a robbery why release stills and not the video itself? #Ferguson	support	comment
+5	552822741250736128	@hassanbasmer @Mariodinava @DaliaChai @cnnbrk yeah i feel really sorry for them	support	comment
+6	553587214987558912	@KayBurley you the fastest for breaking news...	support	comment
+7	553524499803815937	@NBCNews these the same Islamic Terrorists you  claimed were dead a couple days ago?	support	query
+8	553507708574244864	ERTE @RT_com #CharlieHebdo shooting suspects tell police they 'prepared to die as martyrs' - http://t.co/CyehnPMHWU  http://t.co/pGKXRC0inx	support	comment
+9	553555102423089152	Yeah, that's going to happen! MT @RT_com: Gunman in kosher grocery store is demanding the release of the suspects in #CharlieHebdo shooting	support	comment
+10	576281472778182656	So if #RamzanKadyrov had #BorisNemtsov assassinated was it at the direction of Putin or is/was Putin at the direction of FSB/Kadyrov? Hmm	support	query
+11	500285913906565120	@zellieimani they did release the video..up to the journalists to post them  @syndicalisms	support	comment
+12	500297607475105792	@LashawnaTaylor @zellieimani look at the shoes	support	comment
+13	524930943971504129	RT @CBCPolitics Soldier shot at National War Memorial in #Ottawa http://t.co/I5GY1kEqfq #cdnpoli #hw	support	comment
+14	524938679958405120	Our thoughts to all those in Ottawa “@CBCPolitics: Soldier shot at National War Memorial in Ottawa http://t.co/WTkR1N0elc #cdnpoli #hw”	support	comment
+15	553541311484014592	@TopoC they are heroes to their followers no matter what. Don't give them a way to get out instructions to trigger future attacks.	support	comment
+16	500299056934289408	@zellieimani @YourAnonCentral Because it shows Brown negatively. The real issue is: Why did a cop shoot and kill an unarmed man, hands up?	support	comment
+17	524928009493827585	@CBCAlerts reporting soldier shot in Ottawa. Very sad news.	support	comment
+18	576276947648405505	Coup in #Russia? Good article by @Forbes. http://t.co/aaNCpb0blW #RamzanKadyrov #Putin #putindead http://t.co/OfivdTlTbO	support	query
+19	544369031214428160	@FoxNews the only way they gonna survive is if they convert to Isis	support	comment
+20	553511231735099392	@cnni Thy wil bcum satans aftr death ! kep drmng abt martdm &amp; abt thse 72 virgins n heavn ! N India we mde mny trrorsts, satans n kashmir !o	support	comment
+21	500277616587587584	@ReutersUS http://t.co/Fmb6dDwOEL	support	comment
+22	553549946725875712	@RT_com Well done. This kind of information is important to remain secret for the sake of the safety of the hostages!	support	comment
+23	524926598576099328	“@CBCAlerts: Shooter still on loose after uniformed soldier shot at War Memorial, across road from Parliament.  :( sad...	support	comment
+24	553574968563625985	Who buys Kosher? MT @RT_com: BREAKING: Gunman at kosher grocery store threatens to kill hostages if police storm terrorist brothers.	support	query
+25	524990563217838081	@CTVNews you guys "confirmed" there were 3 shootings not long ago. How about you wait for official reports before saying things.	support	comment
+26	553587039598571523	@KayBurley best news I have heard, Kay you are doing an amazing job thank you	support	comment

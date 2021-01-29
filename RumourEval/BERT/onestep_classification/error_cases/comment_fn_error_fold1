@@ -1,0 +1,72 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544292833042374656	@WSJ @maybe Sydney needs to borrow some guns??	comment	query
+1	552795831599120384	“@guardian: Eleven dead in shooting at Paris offices of satirical magazine Charlie Hebdo live updates http://t.co/gdG7LUx7US” how horrific!	comment	support
+2	500299170993819649	@RockRt66 @NBCNews Even so - since when do you shoot a suspected robber if he is unarmed and cooperating?	comment	query
+3	544294742260215809	@RT_com this is exactly why Feinstein can shove that #CIAReport up her ass	comment	support
+4	500417601109889024	@andybankertv @FOX2now This is getting stranger by the minute. Will we ever get to the truth?	comment	query
+5	552796307627470848	@guardian Shocking news.	comment	support
+6	500393982992470016	@andybankertv @FOX2now Your post states theft.  What am I missing?	comment	query
+7	500295446578085889	@NBCNews @JDBmsnbc  Here's a petition to stop militarization of police departments http://t.co/d9jpOGCYxa	comment	support
+8	524926357927903232	Bizar..Gister Montréal vandaag Ottawa. @CBCNews: BREAKING NEWS: Soldier shot at National War Memorial in Ottawa http://t.co/K7RVl9OYJV”	comment	support
+9	500297358966808576	Now police issue pix of "alleged" robbery involving Michael Brown in #Ferguson http://t.co/nuQGDN6Acy http://t.co/CwNi9AIFlz via @NBCNews	comment	support
+10	500295655458230272	@NBCNews Is robbery a death penalty in MO? and without a trial?	comment	query
+11	500401161732886529	@_MishhTheMenace @SLEEZAVELLI @andybankertv @FOX2now Very embarrassing! Of course I meant #mikebrown. Ugh	comment	deny
+12	498433698149056513	Another win for the gene pool @MichaelSkolnik	comment	support
+13	500298524953939969	“@NBCNews: Photos of alleged robbery involving Michael Brown in #Ferguson (via police) http://t.co/3qF72azC70 http://t.co/7rX2u40Jmv” 😒😒	comment	support
+14	529550553773506560	@PrinceMuseum ohhhh! alright! I was confused because it said "no longer on sale"!	comment	support
+15	544287292538769409	@JAXON_CAPITAL @nypost Hillary Clinton would want us to empathize with them and figure out why they're so peevish. #Hillary2016	comment	support
+16	544298655336136704	@FoxNews Cover the damn story.	comment	support
+17	553566995984437248	@ABC knew that an hour ago by the BBC  news	comment	support
+18	500486955692728320	@HIRED__GUN @140elect you don't. I also think you're lying abt your entire online identity.	comment	deny
+19	524926310565814272	“@CBCNews: BREAKING NEWS: Soldier shot at National War Memorial in Ottawa http://t.co/rOSrLhBDt7”. Be safe out there folks in Uniform	comment	support
+20	553486598328041472	@FoxNews French Police have closed Charles de Gaulle airport flights being diverted airport is near Dammartin-en-Goel http://t.co/T14oAIcxjv	comment	support
+21	553544356700094464	@BklynMiddleton is it just a coincidence that kosher market thing or a missibg part of the picture ?	comment	query
+22	500311633458364416	@140elect Fox News will talk about it now	comment	support
+23	524936152902811648	@rcallimachi @ummsalama15_ is that radical?	comment	query
+24	553545251651342337	@BklynMiddleton really sad. Ever seen fotos of gaza babies ? All babies r equal i suppose	comment	support
+25	544300106212577280	@FoxNews  STL Dept. Of Corrections  Off. ADAM JINKERSON Active Member KKK #OpKKK #HoodsOff . http://t.co/tN6IkNogiR	comment	support
+26	544382534264451072	@TroyBramston @australian @channeltennews four packages better get Lambie on the case are they large ?	comment	query
+27	500442407830581248	.@JPantsdotcom @AkaDimiX @140elect Why do you start your question with a lie?	comment	deny
+28	524954461349752832	@BBCBreaking Why are the enforcement folks not wearing bullet proof helmets, while they wear bullet proof vests?	comment	query
+29	524937423420411904	@rcallimachi @Ahmed__Hussain_ @ummsalama15_ true BUT what about the one who presses the missile button knowing innocents will be slaughters?	comment	query
+30	544313211474804736	@MattCostigan @FoxNews my thoughts exactly !	comment	support
+31	524961842603388928	🚨🚨😳 “@BBCBreaking: Watch video showing gunfire inside Canada's parliament in Ottawa http://t.co/ZliVbLVzrp http://t.co/5bo39y5pHc”	comment	support
+32	500324239652958208	@AkaDimiX Yes, let's have an investigation. But you think someone can drag that guy anywhere, let alone a window?  Nah.	comment	deny
+33	500295400696586240	@NBCNews Is there a police report we can see? Initially, the police said the victim was stopped for walking in the street.  #Ferguson	comment	query
+34	544301643194716160	“@PzFeed: BREAKING UPDATE: Gunman says four devices are located around Sydney. Security response underway. Police calling for calm."   RIP	comment	support
+35	524935836899766272	@rcallimachi @Sophia_MJones CBC is running a live blog and tweet thing here on the shootings: http://t.co/M4Ul1K8vzI	comment	support
+36	552792351413133312	“@guardian: Eleven dead in shooting at Paris offices of satirical magazine Charlie Hebdo  http://t.co/6D2Z9UEwnx” - just horrific	comment	support
+37	524930718645092353	Christ. Ottawa friends, stay safe ❤️ "@CBCNews: BREAKING NEWS: Soldier shot at National War Memorial in Ottawa http://t.co/dNA1GVgARg”	comment	support
+38	544302536803745792	@PzFeed @APH_Switzerland whats going on	comment	query
+39	544303978373070853	@GoneSiIver @PzFeed its a major city in australia ??????????? the olympics were there in 2000 ??????	comment	query
+40	552794374950887425	“@guardian: Eleven dead in shooting at Paris offices of satirical magazine Charlie Hebdo – live updates http://t.co/CDPVFv79w0”	comment	support
+41	544382677449580544	@TroyBramston @australian @channeltennews is this same as the "call" to Ray Hadley by "POI" from 10.30am? Or new info?	comment	query
+42	498432131669192704	@MichaelSkolnik cool! Darkskinned man is a crime element in your village?? So, why #obama is alive yet???	comment	query
+43	552808830598262785	“@guardian: Eleven dead in shooting at Paris offices of satirical magazine Charlie Hebdo – live updates http://t.co/5aCd8u1xsY” 🙏 #Prayers	comment	support
+44	500394517733068801	@SLEEZAVELLI @andybankertv @FOX2now I def did not say that. And even if it was #mikesmith I certainly don't think he deserved to die for it.	comment	deny
+45	544321107017232384	@tomsteinfort @9NewsSyd Report responsibly! #iammuslimterroristsarenot	comment	support
+46	553487150550089728	“@FoxNews: BREAKING: French police tell AP suspects in #CharlieHebdo attack have taken a hostage northeast of Paris.” oh dear.	comment	support
+47	525036486337757185	@CP24 That name should not be mentioned again.	comment	deny
+48	500397765881774080	@tomman191 @andybankertv @FOX2now Hey everybody, @tomman1 robbed a store. Can they shoot you down? Can I say that after they shoot you down?	comment	query
+49	500411534065950721	@techweenie @ecl326 @jelani9 @kharyp Early reports said the store had not reported a robbery?? The people in the store don't look alarmed.	comment	query
+50	500394093420494849	@lilfer1234 @andybankertv @FOX2now or is that impossible because the police would never be capable of unscrupulous behavior?	comment	query
+51	524959930928070656	“@BBCBreaking:  gunfire inside Canada's parliament in Ottawa http://t.co/9XPzxYwFI2 http://t.co/5grXS1Fhd4” @hughieb79 Tim Martin??	comment	support
+52	544288116199407616	@nypost Obama JV team making noise? What's up with that Barry?	comment	query
+53	544293285670694912	“@WSJ: Central Sydney shut down by police amid ongoing hostage situation: http://t.co/Cla9yAVq4P” hoping for all the best here	comment	support
+54	544302117930799104	@PzFeed Obviously, a fan of DIE HARD WITH A VENGEANCE.  May be bluffing.	comment	deny
+55	500396146150621185	@andybankertv @FOX2now Brown's family attorney said in an interview today that the person in the video "probably is Brown"	comment	support
+56	500394049501544449	@a_man_in_black @andybankertv @FOX2now Dorian Johnson just confirmed it was them. What now? #blackdenial	comment	support
+57	544292932216696832	@WSJ More workplace violence I'm sure !	comment	support
+58	552795016725532672	“@guardian: Eleven dead in shooting at Paris offices of satirical magazine Charlie Hebdo – live updates http://t.co/UDgEqcuSHx”	comment	support
+59	524954684994629633	@BBCBreaking cr@p, now for even more security.. what moron decided was a good thing to do? No, don't give him the publicity by telling us!!	comment	support
+60	544347661663342593	@princekhattab @fredwillie460 mohamed would NOT approve of their action or the action of all those killing in the name of Iislam	comment	deny
+61	553548128138584065	@BklynMiddleton it's a dialogue isn't it? please don't take my comment as attacking. i am not sad.. yet. im stark raving mad.	comment	deny
+62	544321707436019712	@tomsteinfort @9NewsMelb is Ray prepared to go in wearing a wire?	comment	query
+63	544302181848195073	“@PzFeed: BREAKING UPDATE: Gunman says four devices are located around Sydney. Security response underway" crap	comment	support
+64	500295853186510848	RT @NBCNews: Photos of alleged robbery involving Michael Brown in #Ferguson (via police) http://t.co/A5qR5fhObD http://t.co/9ahlnCIrRM	comment	support
+65	500401233212227585	@andybankertv But Dorian Johnson already admitted they were in store and stole	comment	deny
+66	544293212996001792	@JAXON_CAPITAL @nypost That might be a bit much, no?	comment	query
+67	500727265412386816	@andybankertv @FOX2now think he was too scare to tell who it really was? How many 6'5" 300 # men in Ferguson ?	comment	query
+68	544338496249294848	Meanwhile, these nutbags still allowed to threaten to kill Muslims and brown people. #MartinPlace #SydneySiege http://t.co/lc1Rzubv6C	comment	support
+69	544302387075100672	“@PzFeed: UPDATE: Gunman says 4 devices are located around Sydney. Security response underway. Police calling for calm.” Sherlock!?!?	comment	support
+70	500297035879563265	@NBCNews: Photos of alleged robbery involving #MikeBrown in #Ferguson (via police) http://t.co/MZGPstSetW http://t.co/YgnY86lqTV	comment	support

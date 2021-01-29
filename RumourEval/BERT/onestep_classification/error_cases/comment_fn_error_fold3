@@ -1,0 +1,60 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500308076004929537	Possible "robbery" took place and BAM! Like magic it's as if another UNARMED black youth being murdered has been forgotten #smh #Ferguson	comment	support
+1	553539141443788800	@AP For fucks sake get your act together Paris. What are you guys doing?	comment	query
+2	553541495588802560	“@AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/GEvsZQIVnP”	comment	support
+3	553550998497918976	@genlady9 @RT_com fuck you sarracen and stop islamization	comment	deny
+4	553550000584540160	@RT_com  #StopKillingInnocentPeople #FreePalestine #freeBurma #FreeSyria  #FreeKashmir http://t.co/ggBNiIa9fq	comment	support
+5	553551562732470272	“@RT_com: UPDATE: Gunman in kosher grocery store is demanding the release of the suspects in #CharlieHebdo shooting" &lt;-- :(	comment	support
+6	544281098906521600	@mscott still does not work in uk	comment	deny
+7	500313330930966529	@ReutersUS that is a really stupid announcement by the Ferguson police	comment	deny
+8	553540999465926657	RT“@Daroff: Pray for hostages RT @AP: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/lfQYr5PgEX”	comment	support
+9	553584470264410113	@RT_com where's Eddy Caplan when you need him	comment	query
+10	553539762624012288	“@AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/6T9txBDa89”	comment	support
+11	553506956686532608	“@cnni: Suspects in #CharlieHebdo attack spoke to police by phone and said they wanted to die as martyrs, says MP. http://t.co/q75za1xxAa”	comment	support
+12	544406663898624000	@BBCBreaking how irresponsible tweeting this info, putting innocent lives in jeopardy for a story..shame on you BBC	comment	deny
+13	524930715021213696	@ChristoferU @CBCAlerts @CBCNews Seriously? Likelihood that it's an ISIS attack and THIS is your response???	comment	query
+14	544405226451922944	@BBCBreaking a simply stupid post by the BBC with no thought for lives #IdiotsAtBBC	comment	deny
+15	544421956360368129	“In pictures: the #SydneySiege http://t.co/rgrIsGCd5C Follow live updates: http://t.co/Po6NcBqYpk http://t.co/Rh608kuh24” rt@BBCBreaking	comment	support
+16	552817834628501505	@DaliaChai @cnnbrk reason forthis massacre is a concrete action of paper.not general principles of freedom.	comment	deny
+17	552815313394229253	@hassanbasmer @Mariodinava @cnnbrk its not islamaphobia to call an Islamic terrorist what he is. Muslims r silent &amp; won't stand up	comment	deny
+18	553587040886206466	@KayBurley No confirmation yet, but hopefully good news	comment	support
+19	552835091714416640	@RT_com now that is better grammar	comment	query
+20	553538279073935360	“@AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/tNs0OdDlcJ” oh my.	comment	support
+21	544281932406599681	@mscott does not seem to work on mobile in the US. What about your YouTube stream? http://t.co/f10qWjDBxv	comment	query
+22	544401782676680704	Police confirm they are "monitoring Facebook &amp; Twitter" after reports hostages are tweeting from inside #sydneysiege http://t.co/z9JrtJ2IN3	comment	support
+23	553538295855349761	“@AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/3x3Co78Nnw”	comment	support
+24	552813949427544064	@hassanbasmer Muslims are being persecuted for their religion? In Pakistan, Nigeria or Paris? @DaliaChai @cnnbrk #CharlieHebdo	comment	query
+25	499918462295490560	@AnonymousPress And this isn't tyranny because ...?? Beuller??	comment	query
+26	553541692243316737	@FRANCE24 @HarrietBaldwin It's time 4 West 2 make formal declaration of war vs Islamic Terrorists but is there country with courage 2 do so?	comment	query
+27	553539728067551232	RT @AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/ftjw9awhRm	comment	support
+28	552817983572017153	@hassanbasmer @DaliaChai but it seems clear that you agree that the legitimate #Islamic response to the #CharlieHebdo satire was murder. 😶	comment	support
+29	529695587390980097	@TheSocialCTV Yes indeed !	comment	support
+30	544415646138630144	In pictures: the #SydneySiege http://t.co/wwNwPV2VQ7 Follow live updates: http://t.co/mtmDRCt8SP http://t.co/sVPe6du49Z	comment	support
+31	544419151973208064	@TheRihan @BBCBreaking Stockholm syndrome?  What planet are you on?	comment	query
+32	553555095317929985	@FergusMason1 @RT_com yes, it's certainly an indicator of how that ones going to pan out.	comment	support
+33	553538823989493760	“@AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/9S37Tqhpub”	comment	support
+34	553538493738405888	@AP Locate more photo here! http://t.co/Xh5bm7I3Su	comment	query
+35	553509546602553344	@NBCNews @WikileaksTruck didn't the cops ask you NOT to give this kind of detail?  what is wrong with you?	comment	query
+36	553573995858382849	BREAKING: Gunman at kosher grocery store threatens to kill hostages if police storm terrorist brothers http://t.co/cI8cztQjE6	comment	support
+37	525046502474137600	@cristinaresteve @tsklierenko , everyone is entitled to a opinion , no fight here , you don't know me , I don't know you	comment	deny
+38	544279768636465152	How hard is it to turn down the external sound ABC? @mscott @grogsgamut	comment	query
+39	552818300124545025	@hassanbasmer @DaliaChai do you live in an actual tent? And is your name Saladin or something	comment	query
+40	552811993145835520	@zhuravkov67 @cnnbrk Hey buddy, I'm insulting your faith. Now go fuck yourself.	comment	deny
+41	553539293076279296	“@AP: MORE: #France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/O6wbqBZsuI”	comment	support
+42	500291697167712258	@edeweysmith So they shot him 8 times because he was a "suspect"? Still doesn't make any sense.	comment	support
+43	500279528225120256	@edeweysmith I thought Mike Brown was "struggling" for the cops gun? Total lies by police chief	comment	deny
+44	553541672471396352	“@AP: MORE: France: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/wV3Vm1Ue73” this makes me sick	comment	support
+45	544403899679899648	@BBCBreaking so let me get this straight. Sydney's being evacuated due to hostage situation in a cafe. Aussies are total pussies. #wtffff	comment	deny
+46	553538987554385920	Good morning everyone! - “@AP: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/Ov9o4UWcGW”	comment	support
+47	544368047956299777	@FoxNews Thoughts with 27 hostages and their families and prayers for good news to emerge soon	comment	support
+48	525047771221737472	@cristinaresteve @tsklierenko , sorry about the soldier who died , terrible , no disrespect meant , don't believe gov't course is correct	comment	deny
+49	544438671534202880	Awful! RT @BBCBreaking: the #SydneySiege http://t.co/EkFlbgoLJ5 Follow live updates: http://t.co/M5lTCymfmq http://t.co/9l7EPkVrsB	comment	support
+50	552816676249403393	@hassanbasmer @DaliaChai @cnnbrk why are we not talking of Gaza, ya sidi?	comment	query
+51	552806438440292352	@cnnbrk disturbing.	comment	deny
+52	553541660408545280	@Y_I_S_C I don't think they are leaders  the leaders don't do the real terrorism... But I get what you are saying tho	comment	deny
+53	529716453792956416	Is #Prince in #Toronto? Rumours fly of surprise show... @masseyhall http://t.co/ySchlys6DA	comment	support
+54	500296531036364800	@ReutersUS then put him under 24/7/365 guard???	comment	query
+55	553587467409162240	@KayBurley great news great reporting Kay one of the best in the business	comment	support
+56	553539730449924096	Pray for hostages RT @AP: Shooting, hostage-taking at kosher market in Paris; several reported wounded: http://t.co/0icHFF65Az	comment	support
+57	553536361786277888	“@FRANCE24: #BREAKING - At least five hostages in Paris kosher supermarket: (AFP) https://t.co/xFn05puuBm #Vincennes http://t.co/WU3kmq957e”	comment	support
+58	500284699546517505	If there is surveillance of a robbery why release stills and not the video itself? #Ferguson	comment	query

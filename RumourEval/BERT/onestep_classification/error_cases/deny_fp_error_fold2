@@ -1,0 +1,9 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500383587552985090	@ThiruNagan @WSJ no justification needed...	comment	deny
+1	576801654118428672	@haaker66 @batchelorshow Military Coup to overthrow Putin my 1st thought buddy. Serious rumours Putin is Dead or Critical. Trying 2 source	comment	deny
+2	552852233901965313	@MashableNews brain washed fanatics. The amount of fervor needed to commit such a horrific act is unimaginable.	comment	deny
+3	544284069518147584	@skynews get on with stop messing about	comment	deny
+4	552979530923925504	Banksy gets it right. “@juliamacfarlane: #Banksy's take on #CharlieHebdo. #JeSuisCharlie #NousSommesCharlie http://t.co/Y51AAQ6DRm”	support	deny
+5	544522331939274752	@SkyNewsAust @SkyBusiness you guys had the slowest report commentary in the world. Worst coverage of such a important part in our history :(	comment	deny
+6	500377826722201600	@thelittleidiot no but it shows this person's character and his disregard for the law and law enforcement this fact is highly relevant here.	comment	deny
+7	544463130550489088	@smh hardly myths. Merely poor, unconfirmed reporting. #sydneysiege	query	deny

@@ -1,0 +1,12 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544315985164263425	“@mashable: Uber intros surge pricing in downtown Sydney during hostage siege http://t.co/Hs9OGDzT1e http://t.co/szDW6UpIox” Just not right	query	comment
+1	544521204401729536	@Joyce_Karam Is he consider as terrorist or just a criminal person  as his faith not Sunni Islam ?	query	comment
+2	525113495319502848	@Cellying I am so sad and disgusted that some coward has done this to 2 of our soldiers now. I am livid.	query	comment
+3	529743000247992320	@CBCNews good :-)	query	comment
+4	500384618496163840	@ThiruNagan @WSJ nothing is random where the West is concerned...	query	comment
+5	544355621936439296	@BreakingNews @abcnews Fyi @CNN.	query	comment
+6	544463130550489088	@smh hardly myths. Merely poor, unconfirmed reporting. #sydneysiege	query	deny
+7	500386447158161408	@TPM Wow. I thought a Tweep was being sarcastic, but...it really happened that way?!?	query	comment
+8	501757171122839552	@tipofthemitt @WSJ You thought of that all by yourself??? Amazingly Irrelevant!!!	query	comment
+9	544367820407332864	@MaryPieters @BreakingNews #let it be a great war. The world finally needs one..  greed, selfishness, corruption	query	comment
+10	500306952241840128	@scATX If they were criminals why did the police not arrest his friend right away?They shot one robber &amp; let the other go #MikeBrown	query	comment

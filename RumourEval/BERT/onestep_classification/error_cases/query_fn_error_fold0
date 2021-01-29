@@ -1,0 +1,29 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500284989565448192	@HaX_FR0ST @DIANAZOGA @AntonioFrench So they're claiming a BLACK cop killed #MikeBrown? ?	query	comment
+1	544278190936424449	@tanach67 @BBCWorld @Glinner Muslim extremists that's who. http://t.co/JXSSvhZ4Oh	query	comment
+2	544277362368843777	@Howie_Dee @BBCWorld still extremely confusing. Why a CAFE in AUSTRALIA. It doesn't make sense	query	comment
+3	553591557325336576	@SkyNews 🙏	query	comment
+4	544288960642834432	@OZzSue @AnitaTeguh @BBCWorld @BBCNews where are you sue in oz ?	query	comment
+5	500394428243390465	@leonlohr @LisaBloom Shoving a clerk means you'll take on a police officer with a  gun? #SoundLogic #YesThisIsSarcasm #MikeBrown	query	comment
+6	500757739480842242	@leonlohr @LisaBloom Yep!! Splitting image in everything except one has black hair and other blonde....	query	support
+7	500670228708462592	@leonlohr @LisaBloom But she's very good at instigating and baiting....just like her mother. Smh	query	comment
+8	500405868244910081	@Tom_sveb @flavius217 I blocked him, so you can leave me off the tweets. I won't see them, gives you more characters.	query	comment
+9	500282011982913539	@Yamiche @USATODAY - Is it true there was a struggle in the squad car, before shooting?	query	comment
+10	500319011955949569	@jlpauk @Tom_sveb @rui_xu @flavius217 What they did today was also a good way to taint the jury pool.	query	comment
+11	544295967638302720	@XxPLWxX @BBCWorld cos it's not	query	comment
+12	500389863561388032	@jlpauk @spants @rui_xu @flavius217 in your world, it's cool to shoot unarmed people in the chest, but not the back? Or vice versa?	query	comment
+13	544278146397519872	@BBCWorld @2tweetaboutit  Being forced to hold an IS flag up by ISIS followers, or is that not part of the news ?	query	comment
+14	500312144421089281	@spants @rui_xu @jlpauk @flavius217 to have the Supreme Court declare open season for cops on the population is a deliberate decision.	query	comment
+15	500390396229615617	It's a strategy to manipulate media and misinform people. @LisaBloom	query	comment
+16	544276498778423297	@BBCWorld BUT WHY A FUCKING CAFE IN AUSTRALIA	query	comment
+17	500387313050845184	@jlpauk @Tom_sveb @rui_xu @flavius217 What? No it isn't. There is definitely no justification for deadly force once he was running.	query	comment
+18	500281906362351616	@DIANAZOGA @AntonioFrench Antonio French tweeted this vid 4 days ago. Is this the same robbery and market? https://t.co/uzi36hP9Zo	query	comment
+19	544395913507004416	@cnni I thought police asked media not to report demands. Why you giving these terrorists a voice?	query	comment
+20	500384522840453120	@Tom_sveb @spants @rui_xu @flavius217 That right there tells me you are going into this with an agenda.	query	comment
+21	544296135180169216	@julia_goo_lia @BBCWorld clarified that earlier. Cheers	query	comment
+22	500399398132523009	@spants @Tom_sveb @rui_xu @flavius217 If he was shot in the chest how was he running away?	query	comment
+23	553507222324801536	@BBCBreaking why aint the reporyers walking accross the grass to get closer instead od tryna get past the police?	query	comment
+24	524983145394110464	@CBCAlerts  Has car-jacking by suspects been confirmed?  Questionable.	query	deny
+25	500407571153694720	@jlpauk @Tom_sveb @spants @rui_xu dude, come on. This rogue cop apparently thought he was Judge Dredd and murdered an unarmed kid.	query	comment
+26	500314894063767553	@flavius217 @rui_xu Are you saying they start at the end and don't explain why he was approached by cops?	query	comment
+27	500283003323842560	@DIANAZOGA @AntonioFrench Ironic since all the i witnesses say the officer was white. Now it is the black officer Darren Wilson who shot??	query	comment

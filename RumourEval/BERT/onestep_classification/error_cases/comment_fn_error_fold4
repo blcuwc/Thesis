@@ -1,0 +1,49 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500327622954717184	@zellieimani *raises hand* Oooh Oooh I know, I know!....Um, none.	comment	support
+1	525023449262333952	@ArmedResearch   BBC News - Mr Merizier said that the attacker was of "Arabic appearance" and had "long dark hair and a beard".	comment	support
+2	553213552337891328	@PolicemansLot @Independent exactly!	comment	support
+3	553589785202544640	FLASH: “@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/zTqsnLM4KT”	comment	support
+4	500340654841798656	“@zellieimani: How many white celebrities have been CAUGHT shoplifting and end up dead in streets? I'll wait. #Ferguson” #truth	comment	support
+5	544511221324472321	“@BBCBreaking: Several more hostages flee from cafe under siege in Sydney, local media say http://t.co/LKqXC1pBxI” 🙏🙏	comment	support
+6	553199058849103872	@Independent Was the last person a human being? #PeaceOnEarth http://t.co/ZZOXSZFWV0	comment	query
+7	553589181436284930	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/H0K93KudJr” @EjmAlrai	comment	support
+8	500380991035559937	@rolandsmartin I'm not sure there was a "robbery". Convenience stores keep tobacco behind a counter where you PAY first! IJS #MikeBrown	comment	deny
+9	500283799708499969	@TheAnonMessage2 Now I dont even believe they gave the right name of the officer.one lie leads to another and another..they r buried in lies	comment	deny
+10	499386359841554432	@clydetheslyde @mchenthompson  Isn't this the truth!	comment	deny
+11	500332933098385408	If you can justify shooting an unarmed teenager by saying "he might have been committing a misdemeanor" you are a fucking asshole. #Ferguson	comment	support
+12	500338161370034177	@RT_com#MikeBrown# now US American know and fine! But is he going  to pay for it? Stop those BULLIES from murdering again	comment	query
+13	524973817219653633	@DaryusAzad @CBCAlerts @CBCNews @JustinTrudeau are you middle eastern, by chance?	comment	query
+14	500298114675539968	@YourAnonLive @OpFerguson $50 ?! Shit.. Mane this is some nonsense the report don't even look right. Missing info allat	comment	deny
+15	553213293964562434	I don't need to see that photo to know what happened was. You could publish this instead @wilkotwig @Independent http://t.co/MEaUr2R8TK	comment	deny
+16	553589976416260096	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/2jD029Wv8c”	comment	support
+17	500298324365160450	@von_Steiner @OpFerguson @YourAnonLive Notice the top this says 2nd suspect.  Mike Brown is suspect #1.  Please read everything out there.	comment	deny
+18	553590068271529985	Young child far right. RT@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/wZmToKuCuI	comment	support
+19	544511027526660096	@BBCBreaking https://t.co/vCK5FBN0YT	comment	support
+20	499434486804000768	@clydetheslyde or no missing pretty blonde white girl.	comment	deny
+21	500281613561761793	@TheAnonMessage2 Even if connected, does that mean he should be shot 8 times with his hands up on the ground?	comment	query
+22	499571259730976771	@mechphree @mylifeishid Nicely played, sir!	comment	support
+23	524984454365077505	@cnnbrk http://t.co/hlvnBBaGmk http://t.co/Jwts6ifKqN	comment	support
+24	500282611143413763	@TheAnonMessage2  #Lies if those kids were involved why would the officer just tell the kids to get on the sidewalk, not get on the ground?	comment	query
+25	500282369023430656	Of course, you have to crop have his face. #Ferguson #MikeBrown http://t.co/WfpkBWf6sv	comment	support
+26	524932714940862464	@KrisReyes I'm not. I just received an email from someone in Centre Block.	comment	deny
+27	499435314373734400	@clydetheslyde you have the right to remain silent but isn't that how we ended up here? #Ferguson http://t.co/SErbzckzdX	comment	deny
+28	524985119036411904	@cnnbrk how was Ebola at both places simultaneously??	comment	query
+29	544512659618414594	“@BBCBreaking: Several more hostages flee from cafe under siege in Sydney, local media say http://t.co/e4PzxnOj3F”	comment	support
+30	500489624851324929	@zellieimani @NewBlackMan Didn't happen to Lindsey Lohan or Winona Ryder.  Lily's unpunished shoplifting was a plot device on HIMYM.	comment	support
+31	525021824263151616	@ArmedResearch are u full of shit or is this true?	comment	query
+32	553563604117913600	@avitalleibovich @channel2news actually, http://t.co/zjIFaCvNoJ	comment	deny
+33	553205437043326976	@Independent how does printing this picture of a murder help?	comment	query
+34	500306603233386496	@GdurhamGarrett @iRondrea @YourAnonLive you have a link? or you just taking their word for it?	comment	query
+35	553589370721013760	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/NL693nFvUZ”	comment	support
+36	544485052198158336	@WillPrado1 @BuzzFeedNews @BuzzFeedOz  Is she an actress? This photo makes my conspiracy senses tingle...ya' know?	comment	query
+37	553210433570881536	@PolicemansLot @Independent absolutely disgusting! Using someone's absolutely terrifying murder for own gain. What about their family?	comment	query
+38	500289844728565760	@RT_com  More of RT reporting on American news not it's own. hmhmhmhmhm...	comment	deny
+39	525021049759752192	@emerhughes4 Do you work for the media?	comment	query
+40	525020749019770881	@matthewmreed The glare is right over the trigger guard but the barrel and hammer could be from a lever action.	comment	support
+41	499570907602767872	@clydetheslyde @mylifeishid #MikeBrown would need to be shot in #Benghazi  for #foxnews to cover it	comment	support
+42	500323392864919552	@rzary @ImSoFlorida @TheAnonMessage2 just so my opinion is clear; no way that kid should be dead, period! Anon ain't the vigilante he thinks	comment	support
+43	553586766419329024	.@marrty96 AND YET ITS NOT ON/IN THE TWEET/HEADLINE. AS USUAL. &amp; DONT FUCKING TELL ME TO RELAX. THIS IS THE SAME NETWORK THAT REPORTED THE-	comment	deny
+44	524969503499616256	@DaryusAzad @CBCAlerts @CBCNews @JustinTrudeau are you for real?	comment	query
+45	524984794480775168	“@cnnbrk: Police now say there were 2 shooting incidents in Ottawa:  at the war memorial, &amp; on Parliament Hill. http://t.co/tmZD7LLvCo”	comment	support
+46	524949153424879617	“@cnnbrk: Ottawa Police..: "numerous gunmen" at the Canada War Memorial shooting..." #GodIsUrTerrorist #CanadaNeedsWBC #LiftTheBan #Repent	comment	support
+47	553572054511779840	@letsgoskatepool yes	comment	support

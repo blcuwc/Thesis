@@ -1,0 +1,58 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544290348525449216	“@Independent: Up to 20 held hostage in Sydney Lindt Cafe siege http://t.co/QyJhe54VIB http://t.co/SbPRmGjzP4” Oh. My. God. I am SICK!	support	comment
+1	500320401369870336	@jlpauk @spants @rui_xu @flavius217 they've systematically only released information that makes them look good, even info that might taint	support	comment
+2	500282527559720960	@bonedog84 @DIANAZOGA @AntonioFrench exactly	support	comment
+3	500415054559203329	@flavius217 @Tom_sveb @spants @rui_xu So no matter that evidence comes out during the investigation that's what you're going with?	support	query
+4	500283809989132288	Translation: killing unarmed teen his first. MT @Yamiche: Darren Wilson 6-yr vet of #Ferguson Police w/ no disciplinary actions against him.	support	comment
+5	553591453675696129	MOOI. “@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/tk58wu3PWQ”	support	comment
+6	553591766893727744	PIC RT: “@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/TMq5HzsD8u”	support	comment
+7	524939593196793856	@HSolway @CBCAlerts we are with you! 🇺🇸🍁	support	comment
+8	500406172155777025	@Tom_sveb @spants And there was a struggle inside the car. How do we know Brown didn't get the gun and fire the shot during the struggle?	support	query
+9	544395137703350272	MT “@cnni: Hostage taker in Sydney cafe demands ISIS flag and call with Australian PM, Sky News reports. #sydneysiege”	support	comment
+10	553591179078410240	Deep RT @AFPphoto Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/wFKeSggype	support	comment
+11	552785877748158464	Nowhere is safe anymore? "@independent	support	query
+12	525047302663442433	@MikeSavageHFX a bit of joy in a gloomy day here at #coady55  celebrating remarkable legacy of Coady.	support	comment
+13	500323321519800321	@flavius217 Perhaps they need to alter/improve their training.	support	comment
+14	544292185722851329	Sick. "@Independent: Up to 20 held hostage in Sydney Lindt Cafe siege http://t.co/51vlmPCMq0 http://t.co/pvDLnJIV4h”	support	comment
+15	544277631990898688	@Does_It_Mata @BBCWorld Like I said it's directly across from a big news channel.	support	comment
+16	500478671451586560	@29plussome @LisaBloom seems like theres soo much about this case it gets confusing yet there isnt enough info??	support	query
+17	553507133464248320	@BBCBreaking yes!!!!	support	comment
+18	553592018270978049	Reféns sendo liberados RT @AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/Ug4FFkJAIE”	support	comment
+19	500286345668202497	@IamLaurenGill @DIANAZOGA Exactly	support	comment
+20	500399816954753024	@Tom_sveb @spants @rui_xu @flavius217 Anybody who uses it at every opportunity falsely weakens the message.	support	comment
+21	544309589575864320	@RT_com 50 Hostages now😱 😄 😂 😂 😂	support	comment
+22	553512763906334722	@NickK60 @BBCBreaking well said! The media can help here.	support	comment
+23	524950411950948352	@905fishingguy @CBCAlerts Yes they do.	support	comment
+24	500476059880816640	@TimWiseheart Incorrect. Was on sick person call &amp; then driving came across Brown &amp; friend walking &amp; asked they get off the road @LisaBloom	support	deny
+25	544290366493446145	@flossha that prehistoric evil cult, murdered ppl on the trains &amp; buses, you've had more then your share x	support	comment
+26	524937401597427712	RT @CBCAlerts: More shots fired just off Parliament Hill. Police telling everyone to take cover. @Midiinfo	support	comment
+27	500472734573658112	@LisaBloom the chief said this am that cop was at a call for sick person, then got the call for store strong arm robbery	support	comment
+28	500698984877666304	@leonlohr @LisaBloom I rolled through a stop sign once, the cop was shouting at me like I killed someone. I was terrified. They #overreact.	support	comment
+29	500310256598011904	@flavius217 @rui_xu How? They are giving info that the media asked for.	support	comment
+30	525000464593858561	@MikeSavageHFX Iam very sad !!! My heart broken .	support	comment
+31	552827345435103234	And 8 anonymous. RT@HuffPostUK:4 #CharlieHebdo cartoonists killed: - Charb - Cabu - Tignous - Wolinski #JeSuisCharlie http://t.co/YfmU5MWjJC	support	comment
+32	500282025543499777	“@DIANAZOGA: Police reports released this morning indicate Mike Brown was a suspect in a "strong-armed" robbery in #Ferguson” 😒😒😒😒😒	support	comment
+33	500379521900503040	@jlpauk @Tom_sveb @rui_xu @flavius217 You don't want to see what's happening? Fine. Keep being naive. Good day.	support	comment
+34	500702640305868801	(@TheDailyEdge @marstu67 :'Darren Wilson, #FergusonMO. (cop) who shot #MikeBrown reportedly skipped town with his family days ago.'	support	comment
+35	500415249174888448	@TheDailyEdge probably the best idea	support	comment
+36	500390975819513856	@LisaBloom @southerntalker #Ferguson Chief needs to be removed from his job...I never meant 4 this 2 happen..don't insult our intelligence	support	comment
+37	553591626485215232	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/54e6SWd1lJ”	support	comment
+38	553509397063041024	@BBCBreaking https://t.co/rV2w5SDray	support	comment
+39	553591555479461888	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/SPgzDvd2kW”	support	comment
+40	553526618720075776	@NickK60 @BBCBreaking well said.	support	comment
+41	544296446368169984	@julia_goo_lia @Howie_Dee @BBCWorld true. Seems it's well executed	support	comment
+42	553590965307707393	RT"@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/eBR3ZMcM7p”	support	comment
+43	553591134807920640	🙏 RT "@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/LmXTnWzYdP”	support	comment
+44	500283973239865345	“@DIANAZOGA: Police reports released this morning indicate Mike Brown was a suspect in a "strong-armed" robbery in #Ferguson” #VictimOnTrial	support	comment
+45	498323335965868032	“@MichaelSkolnik: Mike Brown was staying with his grandmother for the summer, who lived in the community. #Ferguson”&lt; 💔😪🙏 sad story	support	comment
+46	500484108993458176	@TheDailyEdge @iRhysTay Remarkably, The Best Literary Novel First/Sentence/Like Tweet Ever ;D	support	comment
+47	500414334367830017	@TheDailyEdge can find him either under a white cone hat or a koch bed!	support	comment
+48	524937277081145345	“@CBCAlerts: More shots fired just off Parliament Hill. Police telling everyone to take cover.” #Ottawa #Parliament	support	comment
+49	500395857473466368	@LisaBloom that's what I thought too... http://t.co/SALT2ztcEq	support	comment
+50	500320630156189697	@flavius217 @spants @Tom_sveb @rui_xu I don't understand the double standard of wanting all the info about the cop but Brown's past is safe.	support	comment
+51	544310817521696769	@RT_com dear God!!! 🙏🙏🙏	support	comment
+52	500284990345981952	@enjen99 @DIANAZOGA oh yes. Clear that something occurred, death still not necessarily the right result.	support	comment
+53	499610176518119424	#casual #impressive  “@MichaelSkolnik: A woman in #Ferguson was shot in head last night and released this selfie: http://t.co/ki10cz6Jiw”	support	comment
+54	553590957317566466	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/ffayD6vc5r”	support	comment
+55	500386029791371267	@FortClank it sure did. A boon to my #brand	support	comment
+56	552785851655393281	@Independent How dreadful.	support	comment

@@ -1,0 +1,18 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	525404874796961794	@emerhughes4 @ArmedResearch ?????? #whatsthesource	query	comment
+1	499370209442942976	“@clydetheslyde: Currently the #FoxNews website has zero/........as the three wise monkeys commented 'see no evil hear no evil speak no evil	query	support
+2	525020543603703809	@ArmedResearch  SOURCE plz :)	query	comment
+3	500378447597039617	@rolandsmartin initially, but found out about the robbery during the altercation	query	comment
+4	525020363357683712	@ArmedResearch Suppose that's real: that guy is carrying a lever action rifle it looks like?	query	comment
+5	500283406962663424	@TheAnonMessage2 didn't the manager of the store already say this was not true	query	deny
+6	524974118614347776	@Cdn_Bowhunter @CBCAlerts @CBCNews @JustinTrudeau exactly so why did you or your friend already pointed the fingers at Muslims #ignorantmuch	query	comment
+7	500307149398876160	@agentbell4272 right.  So he did that for cigars ? I know I need to sit and read report.   What's your thoughts on sll this	query	comment
+8	499448422127394816	@my2bits4u @DMeralles @clydetheslyde http://t.co/u8QxZ0Dv60	query	comment
+9	524932994553769984	@_MarkSutcliffe thanks Mark, Are you in Ottawa? Stay safe	query	comment
+10	525020856381362176	@xSkylaStarx I could tell you but then I'd have to kill you. ;-)	query	comment
+11	500378498054500352	@rolandsmartin may be prudent to ask clerk if Brown was the one who hit him	query	comment
+12	544411279776313344	Gelukkig! “@BuzzFeedNews: 5 Hostages Escape Sydney Cafe Siege — Live Updates From @BuzzFeedOz http://t.co/LtkNnkZR4t http://t.co/HrkdkuiGGY”	query	support
+13	553579540602429440	@cnni Don't they have those machines that shoot loud focused waves at people to get them to submit?	query	comment
+14	524930529637175296	@CutGovtSpending @BreakingNews @CBCNews @TorontoStar that is such a stupid, uneducated comment	query	deny
+15	525022127255482368	@ArmedResearch Many here in Ottawa media looking for the source of this photo.	query	comment
+16	499370418445508608	@clydetheslyde Na, it's too many black people for #FoxNews to care	query	comment

@@ -1,0 +1,12 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544289696915136512	@Shayannoying you are an insensitive idiot!	comment	deny
+1	500313005855617024	@DIANAZOGA @blackrepublican Fit description would be more accurate.	comment	deny
+2	544273706545991681	@newscomauHQ That's not the Isis flag.	comment	deny
+3	500315733633806336	@jlpauk @spants @rui_xu @flavius217 I don't think i did say that. I did criticize a Supreme Court decision I've read many times.	comment	deny
+4	500383364084686849	@jlpauk @spants @rui_xu @flavius217 why don't you check out the racial profiling statistics of the Ferguson PD? some real, hard facts.	comment	deny
+5	500399784394764288	@LisaBloom he didn't say he didn't know about the robbery, it went out over radio, he said he didn't know #MikeBrown was a suspect	comment	deny
+6	500476059880816640	@TimWiseheart Incorrect. Was on sick person call &amp; then driving came across Brown &amp; friend walking &amp; asked they get off the road @LisaBloom	support	deny
+7	500315190529773570	@Tom_sveb @spants @rui_xu @flavius217 For you to declare he was executed without any facts is also as absurd.	comment	deny
+8	500284024162488321	@Yamiche @USATODAY im sure none of the  officers in #fergurson have any infractions against them........	comment	deny
+9	500283944089423872	@Yamiche @USATODAY  yamiche. you didnt get this topic cause your black right?  i hope its of your enduring work ethic	comment	deny
+10	524983145394110464	@CBCAlerts  Has car-jacking by suspects been confirmed?  Questionable.	query	deny

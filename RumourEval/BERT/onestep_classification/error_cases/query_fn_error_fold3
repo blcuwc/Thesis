@@ -1,0 +1,16 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500324150519808000	@MrLewis915 but because of the training that cops receive now is more military in manner they react overly aggressive towards us (non-cop)	query	comment
+1	553213579672178689	@BreakingNews @AFP @MelissaBellF24 How stupid http://t.co/L4WURw0G0e	query	comment
+2	500317344997330945	@MrsDowns @YourAnonLive  corny, but only TRUE evil wants Us to believe INERT OBJECTS are more valuable than LIFE!  --GBJ #thinkforyourself	query	comment
+3	500273884479098880	@ReutersUS @Reuters   whos the man in blk,	query	comment
+4	529696892851347458	@TheSocialCTV Where??? #Prince	query	comment
+5	544371506261012480	“@FoxNews: MORE: Police confirm 3 hostages escape Sydney cafe, unknown number remain http://t.co/Hq11La8bQ0 #Sydneysiege” #MartinPlace	query	comment
+6	544281192632053761	@mscott Are your reporters 100% sure it is an ISIS flag? Cause that is what is being reported. #facts	query	comment
+7	553473556345290752	@TelegraphNews @kufr666 got feed in English or Spanish?  I don't speak French. thx	query	comment
+8	544408627512360961	@BBCBreaking  why tell the whole world you morons...	query	comment
+9	500316896299061248	@YourAnonLive @OpFerguson No but it def softens the blow.	query	comment
+10	544369608392577024	@FoxNews I wonder if other terrorist are gonna help the gunman escape after all this... better be on the look out for other terrorist	query	comment
+11	544465538882084864	@marcwinger @BBCBreaking Extremist rather, no true Muslim will do such nonsense act! The world should know this by now...	query	comment
+12	544371715770695680	“@FoxNews: MORE: Police confirm 3 hostages escape Sydney cafe, unknown number remain inside http://t.co/rDZmvtkkb4 #Sydneysiege”	query	support
+13	544371075304288256	@FoxNews cc @viswanth183	query	comment
+14	544280339720728576	@mscott Any danger of leaving it off for good?? Expats are shut out by the ABC. Missing quality shows.	query	comment

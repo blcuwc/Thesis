@@ -1,0 +1,16 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	553199058849103872	@Independent Was the last person a human being? #PeaceOnEarth http://t.co/ZZOXSZFWV0	comment	query
+1	500338161370034177	@RT_com#MikeBrown# now US American know and fine! But is he going  to pay for it? Stop those BULLIES from murdering again	comment	query
+2	524973817219653633	@DaryusAzad @CBCAlerts @CBCNews @JustinTrudeau are you middle eastern, by chance?	comment	query
+3	500281613561761793	@TheAnonMessage2 Even if connected, does that mean he should be shot 8 times with his hands up on the ground?	comment	query
+4	500396771345199104	@rolandsmartin ok so that was mike in the convenience store?	deny	query
+5	500282611143413763	@TheAnonMessage2  #Lies if those kids were involved why would the officer just tell the kids to get on the sidewalk, not get on the ground?	comment	query
+6	524985119036411904	@cnnbrk how was Ebola at both places simultaneously??	comment	query
+7	500297423047376897	@nickk330 @YourAnonLive If he stole a case of cigars, where were they?	support	query
+8	525021824263151616	@ArmedResearch are u full of shit or is this true?	comment	query
+9	553205437043326976	@Independent how does printing this picture of a murder help?	comment	query
+10	500306603233386496	@GdurhamGarrett @iRondrea @YourAnonLive you have a link? or you just taking their word for it?	comment	query
+11	544485052198158336	@WillPrado1 @BuzzFeedNews @BuzzFeedOz  Is she an actress? This photo makes my conspiracy senses tingle...ya' know?	comment	query
+12	553210433570881536	@PolicemansLot @Independent absolutely disgusting! Using someone's absolutely terrifying murder for own gain. What about their family?	comment	query
+13	525021049759752192	@emerhughes4 Do you work for the media?	comment	query
+14	524969503499616256	@DaryusAzad @CBCAlerts @CBCNews @JustinTrudeau are you for real?	comment	query

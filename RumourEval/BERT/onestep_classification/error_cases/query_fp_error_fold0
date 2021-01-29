@@ -1,0 +1,18 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500406679176241153	@jlpauk why would the ferguson PD and STLCO PD release the information they've released and fail to mention that?	comment	query
+1	500415054559203329	@flavius217 @Tom_sveb @spants @rui_xu So no matter that evidence comes out during the investigation that's what you're going with?	support	query
+2	499537282177978368	@kev_cudi_ crazy right?	comment	query
+3	500315038541156352	@flavius217 I'm curious, had the suspect been white would the PD have acted the same?	comment	query
+4	500406172155777025	@Tom_sveb @spants And there was a struggle inside the car. How do we know Brown didn't get the gun and fire the shot during the struggle?	support	query
+5	544394097340207104	@cnni 🍵☕coffee anyone??	comment	query
+6	552785877748158464	Nowhere is safe anymore? "@independent	support	query
+7	553508114436476929	@mrbillywhite @BBCBreaking Better than Tesco's though?	comment	query
+8	500478671451586560	@29plussome @LisaBloom seems like theres soo much about this case it gets confusing yet there isnt enough info??	support	query
+9	544335993977847808	@Simbad_Reb @VegasRebs have you seen our crime stats? We don't even lock our doors.	comment	query
+10	544275715185995776	@BBCWorld Yeah, being forced to hold an ISIS flag. Why aren't you reporting that?	comment	query
+11	500416260887166976	@TheDailyEdge What's that they say? "If he's not guilty, then why did he run?!"	deny	query
+12	553476849196879873	@MailOnline is ambulance in convoy? #CharlieHebdo	comment	query
+13	524983426072731648	@CBCAlerts @CBCNews What's the matter with ppl crazy fuck	comment	query
+14	500281916658958337	@DIANAZOGA @AntonioFrench WHEN?  he became a suspect upon the firing of the fatal shot?	comment	query
+15	500283424477687808	“@DIANAZOGA: Police reports released this morning indicate Mike Brown was a suspect in a "strong-armed" robbery in #Ferguson”So kill him?	comment	query
+16	524926523317710848	@cmaconthehill @KelseyBanks what is happening in Canada? #sad	comment	query

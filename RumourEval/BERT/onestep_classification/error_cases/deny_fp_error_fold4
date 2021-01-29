@@ -1,0 +1,17 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500380991035559937	@rolandsmartin I'm not sure there was a "robbery". Convenience stores keep tobacco behind a counter where you PAY first! IJS #MikeBrown	comment	deny
+1	500283799708499969	@TheAnonMessage2 Now I dont even believe they gave the right name of the officer.one lie leads to another and another..they r buried in lies	comment	deny
+2	499386359841554432	@clydetheslyde @mchenthompson  Isn't this the truth!	comment	deny
+3	500283406962663424	@TheAnonMessage2 didn't the manager of the store already say this was not true	query	deny
+4	500298114675539968	@YourAnonLive @OpFerguson $50 ?! Shit.. Mane this is some nonsense the report don't even look right. Missing info allat	comment	deny
+5	553213293964562434	I don't need to see that photo to know what happened was. You could publish this instead @wilkotwig @Independent http://t.co/MEaUr2R8TK	comment	deny
+6	500298324365160450	@von_Steiner @OpFerguson @YourAnonLive Notice the top this says 2nd suspect.  Mike Brown is suspect #1.  Please read everything out there.	comment	deny
+7	499368931367608320	Currently the #FoxNews website has zero, repeat, ZERO coverage of the #Ferguson protests, probably due to lack of cowboy hats.	support	deny
+8	499434486804000768	@clydetheslyde or no missing pretty blonde white girl.	comment	deny
+9	544290339339517952	@latikambourke @smh he put out a statement instead of personally speaking to the Australian ppl, why?? Is he hiding under his desk!	support	deny
+10	524932714940862464	@KrisReyes I'm not. I just received an email from someone in Centre Block.	comment	deny
+11	499435314373734400	@clydetheslyde you have the right to remain silent but isn't that how we ended up here? #Ferguson http://t.co/SErbzckzdX	comment	deny
+12	553563604117913600	@avitalleibovich @channel2news actually, http://t.co/zjIFaCvNoJ	comment	deny
+13	500289844728565760	@RT_com  More of RT reporting on American news not it's own. hmhmhmhmhm...	comment	deny
+14	524930529637175296	@CutGovtSpending @BreakingNews @CBCNews @TorontoStar that is such a stupid, uneducated comment	query	deny
+15	553586766419329024	.@marrty96 AND YET ITS NOT ON/IN THE TWEET/HEADLINE. AS USUAL. &amp; DONT FUCKING TELL ME TO RELAX. THIS IS THE SAME NETWORK THAT REPORTED THE-	comment	deny

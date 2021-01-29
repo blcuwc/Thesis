@@ -1,0 +1,31 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500327622954717184	@zellieimani *raises hand* Oooh Oooh I know, I know!....Um, none.	comment	support
+1	525023449262333952	@ArmedResearch   BBC News - Mr Merizier said that the attacker was of "Arabic appearance" and had "long dark hair and a beard".	comment	support
+2	553213552337891328	@PolicemansLot @Independent exactly!	comment	support
+3	553589785202544640	FLASH: “@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/zTqsnLM4KT”	comment	support
+4	500340654841798656	“@zellieimani: How many white celebrities have been CAUGHT shoplifting and end up dead in streets? I'll wait. #Ferguson” #truth	comment	support
+5	544511221324472321	“@BBCBreaking: Several more hostages flee from cafe under siege in Sydney, local media say http://t.co/LKqXC1pBxI” 🙏🙏	comment	support
+6	499370209442942976	“@clydetheslyde: Currently the #FoxNews website has zero/........as the three wise monkeys commented 'see no evil hear no evil speak no evil	query	support
+7	553589181436284930	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/H0K93KudJr” @EjmAlrai	comment	support
+8	500332933098385408	If you can justify shooting an unarmed teenager by saying "he might have been committing a misdemeanor" you are a fucking asshole. #Ferguson	comment	support
+9	500387422417338368	Well, yeah.  He had to trash the name of a dead child before providing that little tid bit. @rolandsmartin	deny	support
+10	524984804161642497	@cnnbrk Three	deny	support
+11	553589976416260096	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/2jD029Wv8c”	comment	support
+12	553590068271529985	Young child far right. RT@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/wZmToKuCuI	comment	support
+13	544511027526660096	@BBCBreaking https://t.co/vCK5FBN0YT	comment	support
+14	499571259730976771	@mechphree @mylifeishid Nicely played, sir!	comment	support
+15	524984454365077505	@cnnbrk http://t.co/hlvnBBaGmk http://t.co/Jwts6ifKqN	comment	support
+16	500282369023430656	Of course, you have to crop have his face. #Ferguson #MikeBrown http://t.co/WfpkBWf6sv	comment	support
+17	544411279776313344	Gelukkig! “@BuzzFeedNews: 5 Hostages Escape Sydney Cafe Siege — Live Updates From @BuzzFeedOz http://t.co/LtkNnkZR4t http://t.co/HrkdkuiGGY”	query	support
+18	544512659618414594	“@BBCBreaking: Several more hostages flee from cafe under siege in Sydney, local media say http://t.co/e4PzxnOj3F”	comment	support
+19	500489624851324929	@zellieimani @NewBlackMan Didn't happen to Lindsey Lohan or Winona Ryder.  Lily's unpunished shoplifting was a plot device on HIMYM.	comment	support
+20	500283133674405888	@TheAnonMessage2 this isn't him clearly	deny	support
+21	553589370721013760	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/NL693nFvUZ”	comment	support
+22	500378223977721856	Oh. So NOW the #Ferguson police chief says the cop didn't know about the robbery when he stopped #MikeBrown. The kid was "jaywalking"? BS!	deny	support
+23	525020749019770881	@matthewmreed The glare is right over the trigger guard but the barrel and hammer could be from a lever action.	comment	support
+24	499570907602767872	@clydetheslyde @mylifeishid #MikeBrown would need to be shot in #Benghazi  for #foxnews to cover it	comment	support
+25	500323392864919552	@rzary @ImSoFlorida @TheAnonMessage2 just so my opinion is clear; no way that kid should be dead, period! Anon ain't the vigilante he thinks	comment	support
+26	553503365100228609	“@BBCBreaking #CharlieHebdo suspects "prepared to die as martyrs", they tell police after making contact. http://t.co/PUM8cYDXS0” Previsível	deny	support
+27	524984794480775168	“@cnnbrk: Police now say there were 2 shooting incidents in Ottawa:  at the war memorial, &amp; on Parliament Hill. http://t.co/tmZD7LLvCo”	comment	support
+28	524949153424879617	“@cnnbrk: Ottawa Police..: "numerous gunmen" at the Canada War Memorial shooting..." #GodIsUrTerrorist #CanadaNeedsWBC #LiftTheBan #Repent	comment	support
+29	553572054511779840	@letsgoskatepool yes	comment	support

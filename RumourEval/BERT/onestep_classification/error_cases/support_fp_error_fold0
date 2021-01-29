@@ -1,0 +1,28 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	500302632641396736	@stljv @AntonioFrench I retract my previous tweet. Darren Wilson's race is NOT CONFIRMED. I apologize.	comment	support
+1	544313221180833792	@NijatK So Australia has banned guns and Violent video games. Looked at what has happened.	comment	support
+2	544299655660843009	What the Hell?!“@Independent: Up to 20 held hostage in Sydney Lindt Cafe siege http://t.co/VwcJ6JfqPh http://t.co/jEcdrj2sHs”	comment	support
+3	525036307173879808	@MikeSavageHFX  The @HfxRegPolice flags are also at half-mast. RIP Cpl. Nathan Cirillo. Our thoughts and prayers are with his family &amp; CAF	comment	support
+4	552997008483811328	“@MelanieTait: Banksy says #JeSuisCharlie in a beautiful way (vi @lukeeve) http://t.co/2C3Alq3Vxx”	comment	support
+5	500757739480842242	@leonlohr @LisaBloom Yep!! Splitting image in everything except one has black hair and other blonde....	query	support
+6	499531869189586945	“@MichaelSkolnik: A woman in #Ferguson was shot in head last night, took selfie. http://t.co/5DZv7HE8FM” EVERYTHING WRONG WITH THIS WORLD⬆️	comment	support
+7	544272759657078785	RT @newscomauHQ: Live coverage of hostage situation unfolding in Sydney's Martin Place http://t.co/qbh5koYBwf http://t.co/lnFXOZr8vL	comment	support
+8	500385150468116480	@jlpauk @spants @rui_xu @flavius217 everyone agrees he was shot once at close range and multiple times at 30+ feet.	comment	support
+9	553615451549605888	@tomfranks9 @SkyNews yeah it's terrible. Sounds like 4 hostages died in the supermarket.	comment	support
+10	553591307206422528	@SkyNews looks like 6 civilians in the latest photo	comment	support
+11	553480808947015680	@MailOnline . french news are reporting at least 2 ppl were killed and 20 ppl injuried in a gunfight with the islamists	comment	support
+12	544295872515686400	@iSpiideyyy @BBCWorld yeah it's not	comment	support
+13	544276279860924418	MT @newscomauHQ Live coverage of hostage situation unfolding in Sydney's Martin Place http://t.co/SZr8krutdn http://t.co/x0YgehSO9x	comment	support
+14	500742011834470401	@veggietrunks @LisaBloom since the 'witness' version is incomplete/inaccurate the whole 'hands up' part prob isn't true either #Ferguson	comment	support
+15	552822679712313344	#GerçekİslamBudur “@HuffPostUK: 4 #CharlieHebdo cartoonists killed: - Charb- Cabu- Tignous- Georges Wolinski http://t.co/T5G5TrcteG”	comment	support
+16	524937966615920640	3,854,082 square mile gun-free zone... | MT @CBCAlerts "More shots fired just off Parliament Hill..." #gunowners	comment	support
+17	500322706760691712	@dissuade strongly agree. I know policing is a terribly high-stress job, but most people are not criminals.	comment	support
+18	510533977086500866	- @MichaelSkolnik A MONTH LATER; #Ferguson police have YET to interview #MyaAatenWhite. The ambulances came only after numerous calls.	comment	support
+19	500281136439103489	@Yamiche In case you haven't been told enough, you've done a fantastic job covering this story. Really great work.	comment	support
+20	544309904992108545	Good thing Australia has strict gun laws. "@RT_com: Approximately 50 hostages may be held captive at #Lindt café http://t.co/1RFsbJWl7h”	comment	support
+21	552829975800578048	“@HuffPostUK: 4 #CharlieHebdo cartoonists killed:  - Charb - Cabu - Tignous - Georges Wolinski  #JeSuisCharlie http://t.co/oN7uKm6ImN” 💔💔	comment	support
+22	553479876632936448	@MailOnline All the suspects are called 'Lee Harvey Oswald'. That's amazing.	comment	support
+23	553596117909512192	“@SkyNews: Hostage-taker in supermarket siege killed, reports say. #ParisAttacks http://t.co/op9B87B1IX http://t.co/u6Yz4BXfrI” #JeSuisJuif	comment	support
+24	552990796702814208	“@MelanieTait: Banksy says #JeSuisCharlie in a beautiful way (vi @lukeeve) http://t.co/ZXnsOenpbz”	comment	support
+25	553590974044069888	“@AFPphoto: Several hostages freed at Jewish supermarket in Paris. Photo Thomas Samson #AFP http://t.co/iKQksrAvMm”	deny	support
+26	500320873086476288	@jlpauk @spants @rui_xu @flavius217 it is! I both argued that the Supreme Court was wrong . . .	comment	support

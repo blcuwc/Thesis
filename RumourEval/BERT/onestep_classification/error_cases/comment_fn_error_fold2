@@ -1,0 +1,29 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544517449606234112	@DazMSmith - Indeed. Wondering why he wasn't locked up or deported when he was accused...	comment	support
+1	529746860714758145	“@CBCNews: Prince not playing Massey Hall tonight, promoter says http://t.co/IUaL2ulFZf http://t.co/ZDYfGmZKX0” good. I was feeling bitter.	comment	support
+2	500383587552985090	@ThiruNagan @WSJ no justification needed...	comment	deny
+3	576801654118428672	@haaker66 @batchelorshow Military Coup to overthrow Putin my 1st thought buddy. Serious rumours Putin is Dead or Critical. Trying 2 source	comment	deny
+4	544314961749880833	Uber sux&gt;&gt; “@mashable: Uber intros surge pricing in downtown Sydney during hostage siege http://t.co/p8nmsPNYs2 http://t.co/Flk22fdUIi”	comment	support
+5	552852233901965313	@MashableNews brain washed fanatics. The amount of fervor needed to commit such a horrific act is unimaginable.	comment	deny
+6	544284069518147584	@skynews get on with stop messing about	comment	deny
+7	544764006368411648	“@johnyD69: @leftocentre @riffraff0001 @onewaymule87 @smh @ZJGarred Doing what Hadley does best”  Indeed.	comment	support
+8	544470819057852416	@leftocentre @onewaymule87 @smh @ZJGarred err Typhoon Hadley an intermediary???? lol collapses on floor with laughter......	comment	query
+9	552798644244860928	.@Telegraph @acooper3 Well, @SkyNewsBreak are noting that whoever fired those bullets knew how to fire the gun properly. PN office dead?	comment	query
+10	553550697128796161	@Reuters And 2 or 3 people killed. Unconfirmed.	comment	support
+11	525023033585827840	@CTVNews shooting suspect http://t.co/NIMwIg5Ewb	comment	support
+12	544540011581161472	@Joyce_Karam @blackrepublican Guess what?  THESE are the type of individuals that 'waterboarding' intends to discover.  @nytimes @CBSNews	comment	query
+13	544535075690663937	@Joyce_Karam Is there a headline writer position at your place of employment?	comment	query
+14	500378287898918912	@thelittleidiot Yes but it does warrant being shot to death by the store owner. Its called Karma.  Guy has a rap sheet as long as your arm	comment	support
+15	544522331939274752	@SkyNewsAust @SkyBusiness you guys had the slowest report commentary in the world. Worst coverage of such a important part in our history :(	comment	deny
+16	500378499891605505	@thelittleidiot  @rollyberry So what?  The police still have to work within the confines of the law even if others do not.	comment	query
+17	544471340887982081	Gee that's a conundrum. @onewaymule87 @smh @ZJGarred Ray Hadley Genuine intermediary or opportunistic blowhard?	comment	query
+18	500377826722201600	@thelittleidiot no but it shows this person's character and his disregard for the law and law enforcement this fact is highly relevant here.	comment	deny
+19	544514837301043200	@SkyNewsAust @SkyBusiness Why was this mongrel on bail? http://t.co/HT4HK7x0mL	comment	query
+20	552839226317094912	Police Officer down in picture, killed by armed terrorists who shouted, "the prophet is avenged" after slaughtering him. @MashableNews	comment	support
+21	553550971167834113	@Reuters 2 confirmed dead in shooting before he took hostages... @The_Smoking_Pen	comment	support
+22	524993786276220928	@CTVNews WHY??? its not their country	comment	query
+23	576797334530580480	@ShaunyNews @batchelorshow Did he die during Childbirth?	comment	query
+24	544316055670493184	Another blow to a terribly-run company. “@mashable: Uber intros surge pricing in Sydney during hostage siege http://t.co/wrcKAm0uOL”	comment	support
+25	576809682947448832	@captaincorri Many sources and you tube...  Where is Vladimir Putin?   http://t.co/EU3eKqo9zS Latest one. All links are in both articles	comment	query
+26	500386770857758721	“@WSJ: #Ferguson police: Officer involved in fatal shooting of Michael Brown didn't know he was suspect. http://t.co/QnHjIqXGlq”still ridic😠	comment	support
+27	524926985454518272	"@CTVMontreal: One person shot outside Centre Block, 2nd wounded inside the building in Parliament Hill shooting http://t.co/YaZ5ptIm5y" &gt;:(	comment	support

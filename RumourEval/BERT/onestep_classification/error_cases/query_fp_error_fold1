@@ -1,0 +1,26 @@
+number	tweet_id	tweet_text	true_label	predicted_label
+0	544292833042374656	@WSJ @maybe Sydney needs to borrow some guns??	comment	query
+1	500299170993819649	@RockRt66 @NBCNews Even so - since when do you shoot a suspected robber if he is unarmed and cooperating?	comment	query
+2	500417601109889024	@andybankertv @FOX2now This is getting stranger by the minute. Will we ever get to the truth?	comment	query
+3	500393982992470016	@andybankertv @FOX2now Your post states theft.  What am I missing?	comment	query
+4	544319596719661056	@tomsteinfort who believes Ray Hadley?	deny	query
+5	500295655458230272	@NBCNews Is robbery a death penalty in MO? and without a trial?	comment	query
+6	553544356700094464	@BklynMiddleton is it just a coincidence that kosher market thing or a missibg part of the picture ?	comment	query
+7	500296225405415424	@NBCNews Now they say this? Not very believable.	deny	query
+8	524936152902811648	@rcallimachi @ummsalama15_ is that radical?	comment	query
+9	544382534264451072	@TroyBramston @australian @channeltennews four packages better get Lambie on the case are they large ?	comment	query
+10	524954461349752832	@BBCBreaking Why are the enforcement folks not wearing bullet proof helmets, while they wear bullet proof vests?	comment	query
+11	524937423420411904	@rcallimachi @Ahmed__Hussain_ @ummsalama15_ true BUT what about the one who presses the missile button knowing innocents will be slaughters?	comment	query
+12	500295400696586240	@NBCNews Is there a police report we can see? Initially, the police said the victim was stopped for walking in the street.  #Ferguson	comment	query
+13	544302536803745792	@PzFeed @APH_Switzerland whats going on	comment	query
+14	544303978373070853	@GoneSiIver @PzFeed its a major city in australia ??????????? the olympics were there in 2000 ??????	comment	query
+15	544382677449580544	@TroyBramston @australian @channeltennews is this same as the "call" to Ray Hadley by "POI" from 10.30am? Or new info?	comment	query
+16	498432131669192704	@MichaelSkolnik cool! Darkskinned man is a crime element in your village?? So, why #obama is alive yet???	comment	query
+17	500397765881774080	@tomman191 @andybankertv @FOX2now Hey everybody, @tomman1 robbed a store. Can they shoot you down? Can I say that after they shoot you down?	comment	query
+18	500411534065950721	@techweenie @ecl326 @jelani9 @kharyp Early reports said the store had not reported a robbery?? The people in the store don't look alarmed.	comment	query
+19	500394093420494849	@lilfer1234 @andybankertv @FOX2now or is that impossible because the police would never be capable of unscrupulous behavior?	comment	query
+20	544288116199407616	@nypost Obama JV team making noise? What's up with that Barry?	comment	query
+21	544321707436019712	@tomsteinfort @9NewsMelb is Ray prepared to go in wearing a wire?	comment	query
+22	544293212996001792	@JAXON_CAPITAL @nypost That might be a bit much, no?	comment	query
+23	500727265412386816	@andybankertv @FOX2now think he was too scare to tell who it really was? How many 6'5" 300 # men in Ferguson ?	comment	query
+24	544298844737916928	“@FoxNews: UPDATE: 13 people being held hostage in #Sydney shop, Opera House evacuated after suspicious package found: reports Are you sure?	support	query
