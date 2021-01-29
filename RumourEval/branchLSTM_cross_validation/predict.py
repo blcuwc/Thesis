@@ -42,8 +42,8 @@ def eval_train_model(params, fold_num):
     dev_arrays_max_len = re.findall(r'\d+', dev_arrays_file.readline())[-2]
     print "dev branch arrays max len: %s" % dev_arrays_max_len
 
-    brancharray = numpy.load(os.path.join(path, 'train/branch_arrays.npy'))
-    num_features = numpy.shape(brancharray)[-1]
+    train_brancharray = numpy.load(os.path.join(path, 'train/branch_arrays.npy'))
+    num_features = numpy.shape(train_brancharray)[-1]
     train_mask = numpy.load(os.path.join(path,
                                          'train/mask.npy')).astype(numpy.int16)
     train_label = numpy.load(os.path.join(path, 'train/padlabel.npy'))
@@ -142,7 +142,7 @@ def eval_train_model(params, fold_num):
         #print("Epoch {} ".format(epoch))
         train_err = 0
         # In each epoch, we do a full pass over the training data:
-        for batch in iterate_minibatches(brancharray, train_mask,
+        for batch in iterate_minibatches(train_brancharray, train_mask,
                                          train_rmdoublemask,
                                          train_label, mb_size,
                                          max_seq_len=int(train_arrays_max_len), shuffle=False):

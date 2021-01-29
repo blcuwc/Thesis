@@ -36,21 +36,25 @@ def get_predictions(fold_num):
     submission = json.load(open(submission_file, 'r'))
     return submission
 
-def print_fp_fn(dataset):
-    print ("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label")
-
+def print_fp_fn(dataset, fold_num, label_name):
     # print commnet false positive samples
+    fp_error_file = open("error_cases/%s_fp_error_fold%s" % (label_name, fold_num), 'w+')
+    fp_error_file.write("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label\n")
     i = 0
     for tweet_id, info_list in dataset['test'].items():
-        if info_list[1] != 'comment' and info_list[2] == 'comment':
-            print (str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
+        if info_list[1] != label_name and info_list[2] == label_name:
+            info_list[0] = info_list[0].replace('\n', ' ')
+            fp_error_file.write(str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2] + '\n')
             i += 1
 
+    fn_error_file = open("error_cases/%s_fn_error_fold%s" % (label_name, fold_num), 'w+')
+    fn_error_file.write("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label\n")
     i = 0
     # print comment false negative samples
     for tweet_id, info_list in dataset['test'].items():
-        if info_list[1] == 'comment' and info_list[2] != 'comment':
-            print (str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2])
+        if info_list[1] == label_name and info_list[2] != label_name:
+            info_list[0] = info_list[0].replace('\n', ' ')
+            fn_error_file.write(str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2] + '\n')
             i += 1
 
 if __name__ == "__main__":
@@ -74,4 +78,7 @@ if __name__ == "__main__":
         if tweet_id in list(dataset['test'].keys()):
             dataset['test'][tweet_id].append(predicted_label)
     
-    print_fp_fn(dataset)
+    print_fp_fn(dataset, fold_num, 'comment')
+    print_fp_fn(dataset, fold_num, 'support')
+    print_fp_fn(dataset, fold_num, 'deny')
+    print_fp_fn(dataset, fold_num, 'query')
