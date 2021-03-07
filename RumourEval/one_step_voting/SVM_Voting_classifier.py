@@ -56,7 +56,7 @@ def save_feature_weights(best_params, train_X, train_Y):
             weight_index.append((categories[i], categories[j]))
     feature_weights_df = pd.DataFrame(clf.coef_, index = weight_index, columns = weight_columns)
 
-    out_path = "./voting_output/"
+    out_path = "./svm_voting_output/"
 
     with open(os.path.join(out_path, "feature_weights.txt"), 'a') as outfile:
         print ("fold %s feature weights:\n" % str(fold_num), feature_weights_df.to_string(), file=outfile)
@@ -103,7 +103,7 @@ def voting_classifier(input_data, fold_num):
     #print ("fold %s best parameters:" % str(fold_num), grid_search.best_params_)
     predicted_labels = grid_search.predict(np.array(test_X))
 
-    out_path = "./voting_output/"
+    out_path = "./svm_voting_output/"
     if not os.path.exists(out_path):
         os.makedirs(out_path)
 

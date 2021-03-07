@@ -26,8 +26,8 @@ def convertlabeltostr(label):
 def load_test_depth_pred_true(train_dev_split, fold_num):
 
     # Read the predictions of the model
-    submission_file = os.path.join("voting_output", "prediction_fold%s.txt" % str(fold_num))
-    #submission_file = os.path.join("crf_voting_output", "prediction_fold%s.txt" % str(fold_num))
+    #submission_file = os.path.join("svm_voting_output", "prediction_fold%s.txt" % str(fold_num))
+    submission_file = os.path.join("crf_voting_output", "prediction_fold%s.txt" % str(fold_num))
     submission = json.load(open(submission_file, 'r'))
 
     # And then the corresponding test data
@@ -52,7 +52,8 @@ def load_test_depth_pred_true(train_dev_split, fold_num):
 
 def load_trials_data():
 
-    trials_file = os.path.join("voting_output", "trials.txt")
+    #trials_file = os.path.join("svm_voting_output", "trials.txt")
+    trials_file = os.path.join("crf_voting_output", "trials.txt")
 
     if os.path.exists(trials_file):
         # Load the trials data
@@ -70,7 +71,8 @@ def load_trials_data():
 
         # Transform to submission format and save
         dev_results_dict = dict(zip(dev_result_id, strpred))
-        with open(os.path.join("voting_output", "predictions_dev.txt"), "w") as outfile:
+        #with open(os.path.join("svm_voting_output", "predictions_dev.txt"), "w") as outfile:
+        with open(os.path.join("crf_voting_output", "predictions_dev.txt"), "w") as outfile:
             json.dump(dev_results_dict, outfile)
     else:
         best_trial_id = None
@@ -250,7 +252,8 @@ def print_table_three(true, pred, devtrue, devpred, best_trial_id, best_trial_lo
 
 def print_extra_details(best_trial_id):
 
-    trials = pickle.load(open(os.path.join("voting_output", "trials.txt"), "rb"))
+    #trials = pickle.load(open(os.path.join("svm_voting_output", "trials.txt"), "rb"))
+    trials = pickle.load(open(os.path.join("crf_voting_output", "trials.txt"), "rb"))
 
     # Print out the best combination of hyperparameters
     print "\n--- New Table ---\n"
@@ -277,7 +280,8 @@ def print_extra_details(best_trial_id):
     plt.title("Hyperparameter optimisation")
     plt.xlabel("Iteration")
     plt.ylabel("Loss")
-    plt.savefig(os.path.join("voting_output", "hyperparameter_loss_values.pdf"))
+    #plt.savefig(os.path.join("svm_voting_output", "hyperparameter_loss_values.pdf"))
+    plt.savefig(os.path.join("crf_voting_output", "hyperparameter_loss_values.pdf"))
 
     # Give details of other hyperparameter combinations that also achieved this loss
     if len(all_best_ids) > 1:
