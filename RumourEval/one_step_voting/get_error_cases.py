@@ -32,13 +32,17 @@ def Extract_dataset(train_dev_split):
     return dataset
 
 def get_predictions(fold_num):
-    submission_file = os.path.join("output", "prediction_fold%s.txt" % str(fold_num))
-    submission = json.load(open(submission_file, 'r'))
-    return submission
+    crf_submission_file = os.path.join("crf_voting_output", "prediction_fold%s.txt" % str(fold_num))
+    crf_submission = json.load(open(crf_submission_file, 'r'))
+    svm_submission_file = os.path.join("svm_voting_output", "prediction_fold%s.txt" % str(fold_num))
+    svm_submission = json.load(open(svm_submission_file, 'r'))
+    return crf_submission, svm_submission
 
-def print_fp_fn(dataset, fold_num, label_name):
+def print_fp_fn(dataset, fold_num, label_name, classifier):
+    if not os.path.exists("%s_error_cases" % classifier):
+        os.mkdir("%s_error_cases" % classifier)
     # print commnet false positive samples
-    fp_error_file = open("error_cases/%s_fp_error_fold%s" % (label_name, fold_num), 'w+')
+    fp_error_file = open("%s_error_cases/%s_fp_error_fold%s" % (classifier, label_name, fold_num), 'w+')
     fp_error_file.write("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label\n")
     i = 0
     for tweet_id, info_list in dataset['test'].items():
@@ -47,7 +51,7 @@ def print_fp_fn(dataset, fold_num, label_name):
             fp_error_file.write(str(i) + '\t' + tweet_id + '\t' + info_list[0] + '\t' + info_list[1] + '\t' + info_list[2] + '\n')
             i += 1
 
-    fn_error_file = open("error_cases/%s_fn_error_fold%s" % (label_name, fold_num), 'w+')
+    fn_error_file = open("%s_error_cases/%s_fn_error_fold%s" % (classifier, label_name, fold_num), 'w+')
     fn_error_file.write("number\ttweet_id\ttweet_text\ttrue_label\tpredicted_label\n")
     i = 0
     # print comment false negative samples
@@ -69,16 +73,29 @@ if __name__ == "__main__":
 
     #dataset[dataset_name] = {tweet_id : [tweet_text, tweet_label]}
     dataset = Extract_dataset(train_dev_splits[int(fold_num)])
+    dataset_copy = Extract_dataset(train_dev_splits[int(fold_num)])
+    #dataset_copy = dataset.copy()
 
     #predictions = {tweet_id : predicted_label}
-    predictions = get_predictions(fold_num)
+    crf_predictions, svm_predictions = get_predictions(fold_num)
 
     #dataset['test'] = {tweet_id : [text, true_label, predicted_label]}
-    for tweet_id, predicted_label in predictions.items():
+    # get crf predictions
+    for tweet_id, predicted_label in crf_predictions.items():
         if tweet_id in list(dataset['test'].keys()):
             dataset['test'][tweet_id].append(predicted_label)
+
+    # get svm predictions 
+    for tweet_id, predicted_label in svm_predictions.items():
+        if tweet_id in list(dataset_copy['test'].keys()):
+            dataset_copy['test'][tweet_id].append(predicted_label)
     
-    print_fp_fn(dataset, fold_num, 'comment')
-    print_fp_fn(dataset, fold_num, 'support')
-    print_fp_fn(dataset, fold_num, 'deny')
-    print_fp_fn(dataset, fold_num, 'query')
+    print_fp_fn(dataset, fold_num, 'comment', 'crf')
+    print_fp_fn(dataset, fold_num, 'support', 'crf')
+    print_fp_fn(dataset, fold_num, 'deny', 'crf')
+    print_fp_fn(dataset, fold_num, 'query', 'crf')
+
+    print_fp_fn(dataset_copy, fold_num, 'comment', 'svm')
+    print_fp_fn(dataset_copy, fold_num, 'support', 'svm')
+    print_fp_fn(dataset_copy, fold_num, 'deny', 'svm')
+    print_fp_fn(dataset_copy, fold_num, 'query', 'svm')

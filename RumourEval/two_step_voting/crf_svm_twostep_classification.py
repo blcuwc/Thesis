@@ -248,7 +248,7 @@ def Second_step_voting(test_ID_list, test_label_list, probability_data, dataset_
     print ("max probability in train_X:", np.max(np.array(X_train)))
     print ("min probability in train_X:", np.min(np.array(X_train)))
     param_grid = {'kernel':('rbf', 'linear'),'C':[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], 'gamma':[0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09]}
-    grid_search = GridSearchCV(SVC(), param_grid)
+    grid_search = GridSearchCV(SVC(kernel='linear', decision_function_shape='ovr'), param_grid)
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore")
         grid_search.fit(X_train, y_train)
@@ -277,7 +277,7 @@ def save_classification_result(first_result_dictionary, second_result_dictionary
 if __name__ == "__main__":
     fold_num = sys.argv[1]
     BranchLSTM_pro_path = "../branchLSTM_cross_validation/saved_data_new/fold%s" % str(fold_num)
-    DistilBert_pro_path = "../BERT_baseline/onestep_classification/saved_probability/fold%s" % str(fold_num)
+    DistilBert_pro_path = "../BERT/onestep_classification/saved_probability/fold%s" % str(fold_num)
 
     train_dev_split = load_dataset()
     train_dev_splits = Cross_validation_threads(train_dev_split)
