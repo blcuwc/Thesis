@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#first_prefix='../branchLSTM_cross_validation/error_cases/'
+#first_prefix='../Adapted_branchLSTM/error_cases/'
 first_prefix='../BERT/onestep_classification/error_cases/'
 
 second_prefix='../one_step_voting/svm_error_cases/'

@@ -212,7 +212,7 @@ def crf_voting(branch_list, ID_list, label_list, fold_num):
 
 if __name__ == "__main__":
     fold_num = sys.argv[1]
-    BranchLSTM_pro_path = "../branchLSTM_cross_validation/saved_data_new/fold%s" % str(fold_num)
+    BranchLSTM_pro_path = "../Adapted_branchLSTM/saved_data_new/fold%s" % str(fold_num)
     DistilBert_pro_path = "../BERT/onestep_classification/saved_probability/fold%s" % str(fold_num)
 
     train_dev_split = load_dataset()
