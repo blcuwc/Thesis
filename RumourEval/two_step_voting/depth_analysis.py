@@ -26,8 +26,8 @@ def convertlabeltostr(label):
 def load_test_depth_pred_true(train_dev_split, fold_num):
 
     # Read the predictions of the model
-    #submission_file = os.path.join("crf_svm_voting_output", "prediction_fold%s.txt" % str(fold_num))
-    submission_file = os.path.join("crf_crf_voting_output", "prediction_fold%s.txt" % str(fold_num))
+    submission_file = os.path.join("crf_svm_voting_output", "prediction_fold%s.txt" % str(fold_num))
+    #submission_file = os.path.join("crf_crf_voting_output", "prediction_fold%s.txt" % str(fold_num))
     submission = json.load(open(submission_file, 'r'))
 
     # And then the corresponding test data

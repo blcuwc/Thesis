@@ -45,25 +45,37 @@ def Load_probabilities(path_branch, path_distill, dataset_dict):
         input_data[dataset] = id_pro
     return input_data
 
-def save_feature_weights(best_params, train_X, train_Y):
+def save_feature_weights(best_params, train_X, train_Y, fold_num):
+    out_path = "./svm_voting_output/"
+
     categories = ['support', 'comment', 'deny', 'query']
     clf = SVC(kernel = 'linear', decision_function_shape='ovr', C = best_params['C'], gamma = best_params['gamma'])
     clf.fit(train_X, train_Y)
+    coef_array = np.array(clf.coef_)
+    print ("coefficients shape:", np.shape(coef_array))
+
+    if os.path.exists(os.path.join(out_path, 'feature_weights.npy')):
+        feature_weights_array = np.load(os.path.join(out_path, 'feature_weights.npy'))
+        coef_array = feature_weights_array + coef_array
+        np.save(os.path.join(out_path, 'feature_weights.npy'), coef_array)
+    else:
+        np.save(os.path.join(out_path, 'feature_weights.npy'), coef_array)
+
+
     weight_index = []
     weight_columns = ['support', 'comment', 'deny', 'query', 'support', 'comment', 'deny', 'query']
     for i in range(len(categories) - 1):
         for j in range(i+1, len(categories)):
             weight_index.append((categories[i], categories[j]))
-    feature_weights_df = pd.DataFrame(clf.coef_, index = weight_index, columns = weight_columns)
+    feature_weights_df = pd.DataFrame(coef_array, index = weight_index, columns = weight_columns)
+    print ("fold %s feature weights sum:\n" % str(fold_num), feature_weights_df.to_string())
 
-    out_path = "./svm_voting_output/"
-
-    with open(os.path.join(out_path, "feature_weights.txt"), 'a') as outfile:
+    with open(os.path.join(out_path, "feature_weights.txt"), 'w') as outfile:
         print ("fold %s feature weights:\n" % str(fold_num), feature_weights_df.to_string(), file=outfile)
     print ("saved feature weigths")
     outfile.close()
 
-    with open(os.path.join(out_path, "feature_weights_latex.txt"), 'a') as outfile:
+    with open(os.path.join(out_path, "feature_weights_latex.txt"), 'w') as outfile:
         print ("fold %s feature weights latex text:\n" % str(fold_num), feature_weights_df.to_latex(), file=outfile)
     print ("saved feature weigths to latex")
     outfile.close()
@@ -125,12 +137,12 @@ def voting_classifier(input_data, fold_num):
     outfile.close()
 
     # save feature weights if kernel = linear
-    save_feature_weights(best_params, train_X, train_Y)
+    save_feature_weights(best_params, train_X, train_Y, fold_num)
 
 if __name__ == "__main__":
     fold_num = sys.argv[1]
     BranchLSTM_pro_path = "../branchLSTM_cross_validation/saved_data_new/fold%s" % str(fold_num)
-    DistilBert_pro_path = "../BERT_baseline/onestep_classification/saved_probability/fold%s" % str(fold_num)
+    DistilBert_pro_path = "../BERT/onestep_classification/saved_probability/fold%s" % str(fold_num)
 
     train_dev_split = load_dataset()
     train_dev_splits = Cross_validation_threads(train_dev_split)

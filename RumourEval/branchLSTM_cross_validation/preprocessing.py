@@ -108,10 +108,10 @@ def load_dataset():
                         src['label'] = test[scrid]
                     else:
                         src['set'] = 'Null'
-                        print "Tweet was not found! ID: ", foldr
+                        print ("Tweet was not found! ID: ", foldr)
             conversation['source'] = src
             if src['text'] is None:
-                print "Tweet has no text", src['id']
+                print ("Tweet has no text", src['id'])
             tweets = []
             path_repl = path_to_tweets+'/'+foldr+'/replies'
             files_t = sorted(os.listdir(path_repl))
@@ -129,23 +129,23 @@ def load_dataset():
     #                        train_dev_tweets['dev'].append(tw)
                             #source tweet in train dataset but reply tweet in dev dataset
                             if flag == 'train':
-                                print "The tree is split between sets", foldr
+                                print ("The tree is split between sets", foldr)
                         elif replyid in train_tweets:
                             tw['set'] = 'train'
                             tw['label'] = train[replyid]
     #                        train_dev_tweets['train'].append(tw)
                             #source tweet in dev dataset but reply in train dataset
                             if flag == 'dev':
-                                print "The tree is split between sets", foldr
+                                print ("The tree is split between sets", foldr)
                         elif replyid in test_tweets:
                             tw['set'] = 'test'
                             tw['label'] = test[replyid]
                         else:
                             tw['set'] = 'Null'
-                            print "Tweet was not found! ID: ", foldr
+                            print ("Tweet was not found! ID: ", foldr)
                         tweets.append(tw)
                         if tw['text'] is None:
-                            print "Tweet has no text", tw['id']
+                            print ("Tweet has no text", tw['id'])
             conversation['replies'] = tweets
             path_struct = path_to_tweets+'/'+foldr+'/structure.json'
             with open(path_struct) as f:
@@ -190,7 +190,7 @@ def load_dataset():
                     src['label'] = test[scrcid]
                 else:
                     src['set'] = 'Null'
-                    print "Tweet was not found! ID: ", foldr
+                    print ("Tweet was not found! ID: ", foldr)
         conversation['source'] = src
         tweets = []
         path_repl = path_to_test+'/'+tfldr+'/replies'
@@ -211,9 +211,9 @@ def load_dataset():
                         tw['label'] = test[replyid]
                     else:
                         tw['set'] = 'Null'
-                        print "Tweet was not found! ID: ", foldr
+                        print ("Tweet was not found! ID: ", foldr)
                     if tw['text'] is None:
-                        print "Tweet has no text", tw['id']
+                        print ("Tweet has no text", tw['id'])
             tweets.append(tw)
         conversation['replies'] = tweets
         path_struct = path_to_test+'/'+tfldr+'/structure.json'
@@ -236,16 +236,16 @@ def tree2branches(root):
     branches = []
     i = 0
     while True:
-        node_name = node.keys()[i]
+        node_name = list(node.keys())[i]
         #print node_name
         branch.append(node_name)
         # get children of the node
-        first_child = node.values()[i]
+        first_child = list(node.values())[i]
         # actually all chldren, all tree left under this node
         if first_child != []:  # if node has children
             node = first_child      # walk down
             parent_tracker.append(node)
-            siblings = first_child.keys()
+            siblings = list(first_child.keys())
             i = 0  # index of a current node
         else:
             branches.append(deepcopy(branch))
@@ -258,7 +258,7 @@ def tree2branches(root):
                 del branch[-1]
                 node = parent_tracker[-1]      # walk up ... one step
                 node_name = branch[-1]
-                siblings = node.keys()
+                siblings = list(node.keys())
                 i = siblings.index(node_name)
             i = i+1    # ... walk right
 #            node =  parent_tracker[-1].values()[i]
@@ -664,7 +664,7 @@ if __name__ == "__main__":
 
     # Read fold num for cross validation
     fold_num = sys.argv[1]
-    print "Preprocessing fold: %s" % str(fold_num)
+    print ("Preprocessing fold: %s" % str(fold_num))
 
     # Import NLTK data
     nltk_data_location = os.path.dirname(os.path.realpath(__file__))

@@ -6,6 +6,7 @@ import os
 import pickle
 import json
 import numpy as np
+import pandas as pd
 import sklearn_crfsuite
 import scipy.stats
 import warnings
@@ -18,6 +19,41 @@ from sklearn_crfsuite import scorers
 from sklearn_crfsuite import metrics
 from preprocessing import load_dataset, Cross_validation_threads
 from Classify import Extract_dataset
+
+def save_feature_weights(best_params, train_X, train_Y, fold_num):
+    out_path = "./crf_svm_voting_output/"
+
+    categories = ['support', 'deny', 'query']
+    clf = SVC(kernel = 'linear', decision_function_shape='ovr', C = best_params['C'], gamma = best_params['gamma'])
+    clf.fit(train_X, train_Y)
+    coef_array = np.array(clf.coef_)
+    print ("coefficients shape:", np.shape(coef_array))
+
+    if os.path.exists(os.path.join(out_path, 'feature_weights.npy')):
+        feature_weights_array = np.load(os.path.join(out_path, 'feature_weights.npy'))
+        coef_array = feature_weights_array + coef_array
+        np.save(os.path.join(out_path, 'feature_weights.npy'), coef_array)
+    else:
+        np.save(os.path.join(out_path, 'feature_weights.npy'), coef_array)
+
+
+    weight_index = []
+    weight_columns = ['support', 'comment', 'deny', 'query', 'support', 'comment', 'deny', 'query']
+    for i in range(len(categories) - 1):
+        for j in range(i+1, len(categories)):
+            weight_index.append((categories[i], categories[j]))
+    feature_weights_df = pd.DataFrame(coef_array, index = weight_index, columns = weight_columns)
+    print ("fold %s feature weights sum:\n" % str(fold_num), feature_weights_df.to_string())
+
+    with open(os.path.join(out_path, "feature_weights.txt"), 'w') as outfile:
+        print ("fold %s feature weights:\n" % str(fold_num), feature_weights_df.to_string(), file=outfile)
+    print ("saved feature weigths")
+    outfile.close()
+
+    with open(os.path.join(out_path, "feature_weights_latex.txt"), 'w') as outfile:
+        print ("fold %s feature weights latex text:\n" % str(fold_num), feature_weights_df.to_latex(), file=outfile)
+    print ("saved feature weigths to latex")
+    outfile.close()
 
 def twpro2features(tw, i, branch, conversation, probability_data):
     #probability_data = {tweet_id : [num_label, [connected_probability]]}
@@ -260,6 +296,7 @@ def Second_step_voting(test_ID_list, test_label_list, probability_data, dataset_
     #num2label = {'0':'support', '2':'deny', '3':'query'}
     #values = [num2label[str(i)] for i in predicted_labels] 
     result_dictionary = dict(zip(test_ID_list, predicted_labels))
+    save_feature_weights(best_params, X_train, y_train, fold_num)
 
     return result_dictionary
 

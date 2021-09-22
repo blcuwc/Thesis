@@ -4,6 +4,8 @@ import sys
 import re
 import numpy as np
 import pandas as pd
+import seaborn as sn
+import matplotlib.pyplot as plt
 
 table_four_head = r"Depth"
 table_five_head = r"Lab"
@@ -15,6 +17,8 @@ in_table_four = False
 in_table_five = False
 in_table_three = False
 in_per_class = False
+in_macro = False
+in_micro = False
 
 table_four_info = {}
 table_five_info = {}
@@ -58,25 +62,50 @@ def Get_average_table_five(table_five_info):
         sum_confusion_matrix += confusion_matrix
     #print (sum_confusion_matrix)
     DF = pd.DataFrame(sum_confusion_matrix, columns = ["Comment", "Deny", "Query", "Support"], index = ["Comment", "Deny", "Query", "Support"], dtype = np.int64)
-    print (DF)
-    print (DF.to_latex(index=False))
+    #print (DF)
+    #print (DF.to_latex(index=False))
+    heatmap = sn.heatmap(DF, annot=True, fmt='d', cmap='Blues', linecolor='white', linewidths=1, cbar_kws={'label': 'number of predicted labels on expected labels'})
+    heatmap.tick_params(axis = 'x', which = 'major', labelsize=8)
+    heatmap.tick_params(axis = 'y', which = 'major', labelsize=8)
+    figure = heatmap.get_figure()
+    plt.xlabel('Predicted labels', fontsize = 12)
+    plt.ylabel('True labels', fontsize = 12)
+    plt.tight_layout()
+    figure.savefig('DistilBERT_confusion_matrix.png', dpi=400)
+    plt.close()
 
 def Get_average_table_three(table_three_info):
-    sum_table_three = []
+    macro_sum = []
+    micro_sum = []
     for fold_num, fold_list in table_three_info.items():
-        temp_list = []
-        for i in fold_list:
-            temp_list.append(float(i))
-
-        if sum_table_three == []:
-            sum_table_three = temp_list
+        if macro_sum == []:
+            accuracy_sum = fold_list[0]
+            macro_sum = fold_list[1]
+            micro_sum = fold_list[2]
+            #print ("macro_sum:", macro_sum)
+            #print ("micro_sum:", micro_sum)
         else:
-            sum_table_three = [sum_table_three[i] + temp_list[i] for i in range(len(temp_list))]
+            accuracy_sum = float(accuracy_sum) + float(fold_list[0])
+            for i in range(3):
+                macro_sum[i] = float(macro_sum[i]) + float(fold_list[1][i])
+                micro_sum[i] = float(micro_sum[i]) + float(fold_list[2][i])
+        #print (macro_sum)
 
-        if fold_num == 4:
-            average_table_three = [sum_table_three[i] / 5 for i in range(len(sum_table_three))]
-    #print (average_table_three)
-    df = pd.DataFrame(np.array([average_table_three]), dtype=np.float64, columns = ["Accuracy", "Precision", "Recall", "F-score"])
+    acc_avg = float(accuracy_sum) / 5
+    macro_avg = []
+    micro_avg = []
+    for i in range(3):
+        macro_avg.append(float(macro_sum[i]) / 5)
+        micro_avg.append(float(micro_sum[i]) / 5)
+
+    average_table_three = [acc_avg]
+    for i in range(3):
+        average_table_three.append(macro_avg[i])
+    for i in range(3):
+        average_table_three.append(micro_avg[i])
+    print (average_table_three)
+
+    df = pd.DataFrame(np.array([average_table_three]), dtype=np.float64, columns = ["Accuracy", "macro_Precision", "macro_Recall", "macro_F-score", "micro_Precision", "micro_Recall", "micro_F-score"])
     print (df)
 
 def Get_average_per_class(per_class_matrix):
@@ -95,7 +124,8 @@ if __name__ == "__main__":
     with open(result_file) as f:
         fold_num = 0
         table_four_fold = {}
-        table_three_fold = []
+        table_three_macro = []
+        table_three_micro = []
 
         confusion_matrix = np.zeros((4,4))
         confusion_matrix_layer = 0
@@ -126,22 +156,45 @@ if __name__ == "__main__":
                 continue
 
             if in_table_three:
-                if re.match(r"Precision", line):
-                    precision = line.strip().split()[1]
-                    table_three_fold.append(precision)
+                if re.match(r'Macro', line):
+                    in_macro = True
                     continue
-                if re.match(r"Recall", line):
-                    recall = line.strip().split()[1]
-                    table_three_fold.append(recall)
+
+                if re.match(r'Micro', line):
+                    in_micro = True
                     continue
-                if re.match(r"F-score", line):
-                    fscore = line.strip().split()[1]
-                    table_three_fold.append(fscore)
-                    table_three_info[fold_num] = table_three_fold
-                    table_three_fold = []
-                    fold_num += 1
-                    in_table_three = False
-                continue
+
+                if in_macro:
+                    if re.match(r"Precision", line):
+                        precision = line.strip().split()[1]
+                        table_three_macro.append(precision)
+                    if re.match(r"Recall", line):
+                        recall = line.strip().split()[1]
+                        table_three_macro.append(recall)
+                    if re.match(r"F-score", line):
+                        fscore = line.strip().split()[1]
+                        table_three_macro.append(fscore)
+                        in_macro = False
+                        table_three_info[fold_num].append(table_three_macro)
+                        table_three_macro = []
+                    continue
+
+                if in_micro:
+                    if re.match(r"Precision", line):
+                        precision = line.strip().split()[1]
+                        table_three_micro.append(precision)
+                    if re.match(r"Recall", line):
+                        recall = line.strip().split()[1]
+                        table_three_micro.append(recall)
+                    if re.match(r"F-score", line):
+                        fscore = line.strip().split()[1]
+                        table_three_micro.append(fscore)
+                        in_micro = False
+                        table_three_info[fold_num].append(table_three_micro)
+                        table_three_micro = []
+                        fold_num += 1
+                        in_table_three = False
+                    continue
 
             if in_per_class:
                 if re.match(r"Precision", line):
@@ -168,7 +221,7 @@ if __name__ == "__main__":
             
             if re.match(table_three_head, line):
                 accuracy = line.strip().split(" = ")[1]
-                table_three_fold.append(accuracy)
+                table_three_info[fold_num] = [accuracy]
                 in_table_three = True
                 continue
 
@@ -177,7 +230,7 @@ if __name__ == "__main__":
                 continue
     #print (table_four_info)
     #print (table_five_info)
-    #print (table_three_info)
+    print (table_three_info)
     Get_average_table_four(table_four_info)
     Get_average_table_five(table_five_info)
     Get_average_table_three(table_three_info)

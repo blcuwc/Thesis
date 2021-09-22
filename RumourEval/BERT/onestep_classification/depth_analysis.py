@@ -1,5 +1,6 @@
 import sys
 import os
+import ipdb
 import json
 import numpy
 import pickle
@@ -196,6 +197,14 @@ def print_table_three(true, pred, devtrue, devpred, best_trial_id, best_trial_lo
         else:
             print "%-12s%-12s" % (lab, "--")
 
+    print "\nMicro-average:"
+    microavg_prfs = precision_recall_fscore_support(true, pred, average='micro')
+    for lab, val in zip(results_headers, microavg_prfs):
+        if val is not None:
+            print "%-12s%-12.3f" % (lab, val)
+        else:
+            print "%-12s%-12s" % (lab, "--")
+
     print "\nPer-class:"
     perclass_prfs = precision_recall_fscore_support(true, pred)
     print "%-12s%-12s%-12s%-12s%-12s" % tuple([""] + sorted(class_labels))
@@ -218,6 +227,14 @@ def print_table_three(true, pred, devtrue, devpred, best_trial_id, best_trial_lo
         print "\nMacro-average:"
         dev_macroavg_prfs = precision_recall_fscore_support(devtrue, devpred, average='macro')
         for lab, val in zip(results_headers, dev_macroavg_prfs):
+            if val is not None:
+                print "%-12s%-12.3f" % (lab, val)
+            else:
+                print "%-12s%-12s" % (lab, "--")
+
+        print "\nMicro-average:"
+        dev_microavg_prfs = precision_recall_fscore_support(devtrue, devpred, average='micro')
+        for lab, val in zip(results_headers, dev_microavg_prfs):
             if val is not None:
                 print "%-12s%-12.3f" % (lab, val)
             else:

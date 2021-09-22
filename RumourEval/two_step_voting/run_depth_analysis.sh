@@ -13,8 +13,8 @@
 
 for i in 0 1 2 3 4
 do 
-  #python depth_analysis.py $i >> crf_svm_voting_output/tables.txt
+  python depth_analysis.py $i >> crf_svm_voting_output/tables.txt
   #wait
-  python depth_analysis.py $i >> crf_crf_voting_output/tables.txt
+  #python depth_analysis.py $i >> crf_crf_voting_output/tables.txt
   wait
 done
